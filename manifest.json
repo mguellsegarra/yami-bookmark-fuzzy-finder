@@ -3,9 +3,10 @@
   "name": "Bookmark Fuzzy Finder",
   "version": "1.0",
   "description": "Quickly search and open bookmarks with a Raycast-like interface",
-  "permissions": ["bookmarks", "commands"],
-  "action": {
-    "default_popup": "popup.html"
+  "permissions": ["bookmarks", "commands", "activeTab", "scripting", "favicon"],
+  "action": {},
+  "background": {
+    "service_worker": "background.js"
   },
   "commands": {
     "_execute_action": {

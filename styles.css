@@ -1,0 +1,161 @@
+:root {
+  --bff-bg-color-light: rgba(255, 255, 255, 0.95);
+  --bff-text-color-light: #222;
+  --bff-border-color-light: #ccc;
+  --bff-shadow-color-light: rgba(0, 0, 0, 0.15);
+  --bff-highlight-bg-light: #eee;
+  --bff-url-color-light: #555;
+
+  --bff-bg-color-dark: rgba(25, 25, 25, 0.97);
+  --bff-text-color-dark: #ddd;
+  --bff-border-color-dark: #444;
+  --bff-shadow-color-dark: rgba(0, 0, 0, 0.6);
+  --bff-highlight-bg-dark: #383838;
+  --bff-url-color-dark: #999;
+  --bff-focus-border-dark: #666;
+  --bff-focus-border-light: #aaa;
+}
+
+/* Default Light Mode */
+body {
+  --bff-bg-color: var(--bff-bg-color-light);
+  --bff-text-color: var(--bff-text-color-light);
+  --bff-border-color: var(--bff-border-color-light);
+  --bff-shadow-color: var(--bff-shadow-color-light);
+  --bff-highlight-bg: var(--bff-highlight-bg-light);
+  --bff-url-color: var(--bff-url-color-light);
+  --bff-focus-border: var(--bff-focus-border-light);
+}
+
+/* Dark Mode */
+@media (prefers-color-scheme: dark) {
+  body {
+    --bff-bg-color: var(--bff-bg-color-dark);
+    --bff-text-color: var(--bff-text-color-dark);
+    --bff-border-color: var(--bff-border-color-dark);
+    --bff-shadow-color: var(--bff-shadow-color-dark);
+    --bff-highlight-bg: var(--bff-highlight-bg-dark);
+    --bff-url-color: var(--bff-url-color-dark);
+    --bff-focus-border: var(--bff-focus-border-dark);
+  }
+}
+
+/* Ensure the container is above everything else */
+#bookmark-fuzzy-finder-container {
+  /* Basic Resets */
+  all: initial; /* Attempt to reset most inherited styles */
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  box-sizing: border-box;
+  color: var(--bff-text-color);
+  /* Positioning & Appearance */
+  position: fixed;
+  top: 30%; /* Adjust vertical position as needed */
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2147483647; /* Max z-index */
+  background-color: var(--bff-bg-color);
+  border-radius: 8px;
+  box-shadow: 0 10px 30px var(--bff-shadow-color);
+  padding: 15px;
+  width: 600px; /* Adjust width as needed */
+  max-width: 90%;
+  display: flex;
+  flex-direction: column;
+  backdrop-filter: blur(5px); /* Optional: frosted glass effect */
+}
+#bookmark-fuzzy-finder-container * {
+  /* Ensure children inherit box-sizing */
+  box-sizing: inherit;
+}
+
+#bookmark-fuzzy-finder-input {
+  all: initial; /* Reset */
+  font-family: inherit;
+  font-size: 1.2em;
+  line-height: inherit;
+  width: 100%;
+  padding: 12px 15px;
+  border: 1px solid var(--bff-border-color);
+  border-radius: 6px;
+  margin: 0 0 10px 0; /* Adjusted margin */
+  background-color: var(--bff-bg-color);
+  color: var(--bff-text-color);
+  box-sizing: border-box;
+}
+#bookmark-fuzzy-finder-input:focus {
+  outline: none; /* Optional: remove default focus outline */
+  border-color: var(--bff-focus-border); /* Use theme focus border color */
+  box-shadow: 0 0 0 1px var(--bff-focus-border); /* Optional: add subtle focus shadow */
+}
+
+#bookmark-fuzzy-finder-results {
+  all: initial; /* Reset */
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  max-height: 300px; /* Limit height and make scrollable */
+  overflow-y: auto;
+  /* Custom scrollbar styling (optional) */
+  scrollbar-width: thin; /* Firefox */
+  scrollbar-color: var(--bff-border-color) transparent; /* Firefox */
+}
+/* Webkit scrollbar styling (optional) */
+#bookmark-fuzzy-finder-results::-webkit-scrollbar {
+  width: 8px;
+}
+#bookmark-fuzzy-finder-results::-webkit-scrollbar-track {
+  background: transparent;
+}
+#bookmark-fuzzy-finder-results::-webkit-scrollbar-thumb {
+  background-color: var(--bff-border-color);
+  border-radius: 4px;
+}
+
+#bookmark-fuzzy-finder-results li {
+  all: initial; /* Reset */
+  /* Re-apply necessary properties after 'all: initial' */
+  display: flex;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif; /* Explicitly set font */
+  font-size: 1em; /* Adjust as needed, relative to container */
+  line-height: 1.4; /* Adjust as needed */
+  padding: 10px 15px;
+  border-bottom: 1px solid var(--bff-border-color);
+  cursor: pointer;
+  align-items: center;
+  color: var(--bff-text-color);
+  box-sizing: border-box; /* Ensure box-sizing is consistent */
+  overflow: hidden; /* Clip background for rounded corners */
+}
+
+#bookmark-fuzzy-finder-results li {
+  border-radius: 6px;
+}
+
+#bookmark-fuzzy-finder-results li.selected {
+  background-color: var(--bff-highlight-bg);
+}
+
+/* Removed icon styles */
+
+#bookmark-fuzzy-finder-results li .title {
+  flex-grow: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  min-width: 0; /* Important for flex item text overflow */
+  margin-right: 10px; /* Add some space between title and URL */
+}
+
+#bookmark-fuzzy-finder-results li .url {
+  color: var(--bff-url-color);
+  font-size: 0.9em;
+  /* margin-left: 10px; Removed as title has margin-right */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
