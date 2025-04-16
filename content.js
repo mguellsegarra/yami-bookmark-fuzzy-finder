@@ -141,58 +141,23 @@ function handleSearchInput(event) {
 }
 
 function handleKeyboardNavigation(event) {
-  const displayedItems = resultsList.children;
-  const numDisplayed = displayedItems.length;
-  if (!numDisplayed) return; // No items displayed, do nothing
-
-  // Find the current display index (0, 1, or 2) based on selectedIndex
-  let currentDisplayIndex = -1;
-  for (let i = 0; i < numDisplayed; i++) {
-    if (
-      parseInt(displayedItems[i].dataset.originalIndex, 10) === selectedIndex
-    ) {
-      currentDisplayIndex = i;
-      break;
-    }
-  }
-
-  // If nothing is currently selected visually (e.g., index > 2), default to -1 or 0 for navigation
-  if (currentDisplayIndex === -1) {
-    // If pressing down, start from the first visible item (display index 0)
-    // If pressing up, start from the last visible item (display index numDisplayed - 1)
-    // This handles cases where selectedIndex is outside the visible range
-    currentDisplayIndex = event.key === "ArrowUp" ? numDisplayed : -1;
-  }
-
-  let nextDisplayIndex = currentDisplayIndex; // Initialize with current
+  if (!searchResults.length) return; // No results to navigate
 
   if (event.key === "ArrowDown") {
     event.preventDefault();
-    nextDisplayIndex = (currentDisplayIndex + 1) % numDisplayed;
+    selectedIndex = (selectedIndex + 1) % searchResults.length;
+    updateSelection();
   } else if (event.key === "ArrowUp") {
     event.preventDefault();
-    nextDisplayIndex = (currentDisplayIndex - 1 + numDisplayed) % numDisplayed;
+    selectedIndex =
+      (selectedIndex - 1 + searchResults.length) % searchResults.length;
+    updateSelection();
   } else if (event.key === "Enter") {
     event.preventDefault();
-    // Enter still uses the global selectedIndex which might be outside the visible range
-    // but should correspond to the correct full result list index
     if (selectedIndex >= 0 && selectedIndex < searchResults.length) {
       const selectedBookmark = searchResults[selectedIndex].item;
       openBookmark(selectedBookmark.url);
       hideOmnibar();
-    }
-    return; // Don't update selection on Enter
-  } else {
-    return; // Ignore other keys like Escape here
-  }
-
-  // Find the new selectedIndex based on the nextDisplayIndex
-  const newItem = displayedItems[nextDisplayIndex];
-  if (newItem) {
-    const newOriginalIndex = parseInt(newItem.dataset.originalIndex, 10);
-    if (newOriginalIndex !== selectedIndex) {
-      selectedIndex = newOriginalIndex;
-      updateSelection();
     }
   }
 }
@@ -224,20 +189,13 @@ function renderResults(resultsToRender) {
   if (!resultsList) return;
   resultsList.innerHTML = ""; // Clear previous results
 
-  // Determine the slice to display (max 3 items)
-  // This logic could be enhanced to show a slice around the selectedIndex,
-  // but for now, we just show the top 3.
-  const displaySlice = resultsToRender.slice(0, 3);
-
-  displaySlice.forEach((result, displayIndex) => {
+  // Show all results instead of just 3
+  resultsToRender.forEach((result, index) => {
     const li = document.createElement("li");
-    // Find the index in the *original* full searchResults array
-    const originalIndex = searchResults.findIndex(
-      (r) => r.item.url === result.item.url
-    );
-    li.dataset.originalIndex = originalIndex; // Store the original index
+    // Store the index in the full searchResults array
+    li.dataset.originalIndex = index;
 
-    if (originalIndex === selectedIndex) {
+    if (index === selectedIndex) {
       li.classList.add("selected");
     }
 
@@ -257,29 +215,26 @@ function renderResults(resultsToRender) {
       hideOmnibar();
     });
     li.addEventListener("mouseenter", () => {
-      // Update selectedIndex based on the original index of the hovered item
-      if (originalIndex !== -1) {
-        selectedIndex = originalIndex;
-        updateSelection(); // Update highlighting
-      }
+      selectedIndex = index;
+      updateSelection();
     });
 
     resultsList.appendChild(li);
   });
 
-  updateSelection(); // Update highlighting based on potentially new selectedIndex
+  updateSelection();
 }
 
 function updateSelection() {
   if (!resultsList) return;
 
   Array.from(resultsList.children).forEach((item) => {
-    const itemOriginalIndex = parseInt(item.dataset.originalIndex, 10);
-    const isSelected = itemOriginalIndex === selectedIndex;
+    const itemIndex = parseInt(item.dataset.originalIndex, 10);
+    const isSelected = itemIndex === selectedIndex;
 
     item.classList.toggle("selected", isSelected);
     if (isSelected) {
-      // Scroll the item into view if it's selected
+      // Ensure the selected item is visible in the scrollable list
       item.scrollIntoView({ block: "nearest", inline: "nearest" });
     }
   });

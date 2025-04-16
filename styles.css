@@ -113,6 +113,7 @@ body {
   overflow-y: auto; /* Keep scrollbar if needed */
   scrollbar-width: thin;
   scrollbar-color: var(--bff-border-color) transparent;
+  max-height: 30vh; /* Limit height to 60% of viewport height */
 }
 
 /* Apply margin-top only when the list has children (is not empty) */
