@@ -150,19 +150,17 @@ body {
 
 #bookmark-fuzzy-finder-results li .title {
   flex-grow: 1;
-  /* Ensure title stays on one line */
+  flex-shrink: 0; /* Title should not shrink */
   white-space: nowrap;
-  /* Keep overflow off so it pushes the URL instead of truncating itself */
-  /* overflow: hidden; */
-  /* text-overflow: ellipsis; */
-  min-width: 0;
-  margin-right: 30px; /* Increased spacing */
+  /* min-width: 0; Removed - not needed if title doesn't truncate */
+  margin-right: 30px;
 }
 
 #bookmark-fuzzy-finder-results li .url {
+  flex-grow: 0; /* URL should not grow */
+  flex-shrink: 1; /* URL *should* shrink (this is default, but explicit) */
   color: var(--bff-url-color);
   font-size: 0.9em;
-  /* Keep overflow properties to truncate the URL */
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;

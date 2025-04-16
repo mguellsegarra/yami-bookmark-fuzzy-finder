@@ -122,26 +122,59 @@ function handleSearchInput(event) {
 }
 
 function handleKeyboardNavigation(event) {
-  const numResults = resultsList.children.length;
-  if (!numResults) return; // Don't handle nav if no results
+  const displayedItems = resultsList.children;
+  const numDisplayed = displayedItems.length;
+  if (!numDisplayed) return; // No items displayed, do nothing
+
+  // Find the current display index (0, 1, or 2) based on selectedIndex
+  let currentDisplayIndex = -1;
+  for (let i = 0; i < numDisplayed; i++) {
+    if (
+      parseInt(displayedItems[i].dataset.originalIndex, 10) === selectedIndex
+    ) {
+      currentDisplayIndex = i;
+      break;
+    }
+  }
+
+  // If nothing is currently selected visually (e.g., index > 2), default to -1 or 0 for navigation
+  if (currentDisplayIndex === -1) {
+    // If pressing down, start from the first visible item (display index 0)
+    // If pressing up, start from the last visible item (display index numDisplayed - 1)
+    // This handles cases where selectedIndex is outside the visible range
+    currentDisplayIndex = event.key === "ArrowUp" ? numDisplayed : -1;
+  }
+
+  let nextDisplayIndex = currentDisplayIndex; // Initialize with current
 
   if (event.key === "ArrowDown") {
     event.preventDefault();
-    selectedIndex = (selectedIndex + 1) % numResults;
-    updateSelection();
+    nextDisplayIndex = (currentDisplayIndex + 1) % numDisplayed;
   } else if (event.key === "ArrowUp") {
     event.preventDefault();
-    selectedIndex = (selectedIndex - 1 + numResults) % numResults;
-    updateSelection();
+    nextDisplayIndex = (currentDisplayIndex - 1 + numDisplayed) % numDisplayed;
   } else if (event.key === "Enter") {
     event.preventDefault();
+    // Enter still uses the global selectedIndex which might be outside the visible range
+    // but should correspond to the correct full result list index
     if (selectedIndex >= 0 && selectedIndex < searchResults.length) {
       const selectedBookmark = searchResults[selectedIndex].item;
       openBookmark(selectedBookmark.url);
-      hideOmnibar(); // Hide after opening
+      hideOmnibar();
     }
-  } else if (event.key === "Escape") {
-    // Specific Escape handling moved to handleGlobalKeys
+    return; // Don't update selection on Enter
+  } else {
+    return; // Ignore other keys like Escape here
+  }
+
+  // Find the new selectedIndex based on the nextDisplayIndex
+  const newItem = displayedItems[nextDisplayIndex];
+  if (newItem) {
+    const newOriginalIndex = parseInt(newItem.dataset.originalIndex, 10);
+    if (newOriginalIndex !== selectedIndex) {
+      selectedIndex = newOriginalIndex;
+      updateSelection();
+    }
   }
 }
 
@@ -172,15 +205,19 @@ function renderResults(resultsToRender) {
   if (!resultsList) return;
   resultsList.innerHTML = ""; // Clear previous results
 
-  // Render only the top 3 results passed to the function
-  resultsToRender.slice(0, 3).forEach((result, index) => {
+  // Determine the slice to display (max 3 items)
+  // This logic could be enhanced to show a slice around the selectedIndex,
+  // but for now, we just show the top 3.
+  const displaySlice = resultsToRender.slice(0, 3);
+
+  displaySlice.forEach((result, displayIndex) => {
     const li = document.createElement("li");
-    li.dataset.index = index;
-    // Note: selectedIndex now refers to the index within the *original* searchResults
-    // We need to check if the current item's index in the original array matches
+    // Find the index in the *original* full searchResults array
     const originalIndex = searchResults.findIndex(
       (r) => r.item.url === result.item.url
     );
+    li.dataset.originalIndex = originalIndex; // Store the original index
+
     if (originalIndex === selectedIndex) {
       li.classList.add("selected");
     }
@@ -193,7 +230,6 @@ function renderResults(resultsToRender) {
     urlSpan.className = "url";
     urlSpan.textContent = result.item.url;
 
-    // Append only title and URL
     li.appendChild(titleSpan);
     li.appendChild(urlSpan);
 
@@ -202,34 +238,29 @@ function renderResults(resultsToRender) {
       hideOmnibar();
     });
     li.addEventListener("mouseenter", () => {
-      // Find the index in the original searchResults array
-      const hoverIndex = searchResults.findIndex(
-        (r) => r.item.url === result.item.url
-      );
-      if (hoverIndex !== -1) {
-        selectedIndex = hoverIndex;
-        updateSelection(resultsToRender.slice(0, 3)); // Pass the currently rendered items
+      // Update selectedIndex based on the original index of the hovered item
+      if (originalIndex !== -1) {
+        selectedIndex = originalIndex;
+        updateSelection(); // Update highlighting
       }
     });
 
     resultsList.appendChild(li);
   });
 
-  updateSelection(resultsToRender.slice(0, 3)); // Pass the currently rendered items
+  updateSelection(); // Update highlighting based on potentially new selectedIndex
 }
 
-function updateSelection(renderedResults) {
+function updateSelection() {
   if (!resultsList) return;
-  // Update selection based on the currently rendered list items
-  Array.from(resultsList.children).forEach((item, index) => {
-    // Find the corresponding full result based on the rendered item's URL (or title/data-index)
-    const renderedUrl = renderedResults[index]?.item.url;
-    const selectedUrl = searchResults[selectedIndex]?.item.url;
-    const isSelected =
-      renderedUrl && selectedUrl && renderedUrl === selectedUrl;
+
+  Array.from(resultsList.children).forEach((item) => {
+    const itemOriginalIndex = parseInt(item.dataset.originalIndex, 10);
+    const isSelected = itemOriginalIndex === selectedIndex;
 
     item.classList.toggle("selected", isSelected);
     if (isSelected) {
+      // Scroll the item into view if it's selected
       item.scrollIntoView({ block: "nearest", inline: "nearest" });
     }
   });
