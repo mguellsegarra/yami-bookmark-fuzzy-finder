@@ -156,7 +156,7 @@ body {
   /* overflow: hidden; */
   /* text-overflow: ellipsis; */
   min-width: 0;
-  margin-right: 15px;
+  margin-right: 30px; /* Increased spacing */
 }
 
 #bookmark-fuzzy-finder-results li .url {
@@ -166,6 +166,5 @@ body {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-  flex-shrink: 0; /* Important: prevent URL from shrinking */
-  text-align: right; /* Align truncated URL to the right */
+  text-align: right;
 }
