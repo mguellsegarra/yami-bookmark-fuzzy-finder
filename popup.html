@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Bookmark Fuzzy Finder</title>
+    <style>
+      body {
+        width: 600px;
+        height: 400px;
+        margin: 0;
+        padding: 16px;
+        background-color: #1a1a1a;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          Oxygen, Ubuntu, Cantarell, sans-serif;
+      }
+
+      #search-container {
+        position: relative;
+        margin-bottom: 12px;
+      }
+
+      #search-input {
+        width: 100%;
+        padding: 12px;
+        font-size: 16px;
+        background-color: #2a2a2a;
+        border: 1px solid #3a3a3a;
+        border-radius: 8px;
+        color: #ffffff;
+        outline: none;
+        box-sizing: border-box;
+      }
+
+      #search-input:focus {
+        border-color: #4a4a4a;
+      }
+
+      #results-container {
+        max-height: 320px;
+        overflow-y: auto;
+      }
+
+      .result-item {
+        padding: 8px 12px;
+        margin: 4px 0;
+        border-radius: 6px;
+        color: #ffffff;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+
+      .result-item:hover,
+      .result-item.selected {
+        background-color: #2a2a2a;
+      }
+
+      .result-item .favicon {
+        width: 16px;
+        height: 16px;
+      }
+
+      .result-item .title {
+        flex-grow: 1;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+      /* Custom scrollbar */
+      ::-webkit-scrollbar {
+        width: 8px;
+      }
+
+      ::-webkit-scrollbar-track {
+        background: #1a1a1a;
+      }
+
+      ::-webkit-scrollbar-thumb {
+        background: #3a3a3a;
+        border-radius: 4px;
+      }
+
+      ::-webkit-scrollbar-thumb:hover {
+        background: #4a4a4a;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="search-container">
+      <input
+        type="text"
+        id="search-input"
+        placeholder="Search bookmarks..."
+        autofocus
+      />
+    </div>
+    <div id="results-container"></div>
+    <script src="fuse.min.js"></script>
+    <script src="popup.js"></script>
+  </body>
+</html>

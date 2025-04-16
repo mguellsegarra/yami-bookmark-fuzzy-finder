@@ -1,0 +1,18 @@
+{
+  "manifest_version": 3,
+  "name": "Bookmark Fuzzy Finder",
+  "version": "1.0",
+  "description": "Quickly search and open bookmarks with a Raycast-like interface",
+  "permissions": ["bookmarks", "commands"],
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "commands": {
+    "_execute_action": {
+      "suggested_key": {
+        "default": "Ctrl+Q"
+      },
+      "description": "Open bookmark fuzzy finder"
+    }
+  }
+}
