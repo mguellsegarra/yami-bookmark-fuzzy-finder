@@ -33,21 +33,31 @@ function handleVisibilityChange() {
 }
 
 function showOmnibar() {
+  let justCreated = false;
   if (!omnibarContainer) {
     createOmnibarUI();
-    fetchBookmarks(); // Fetch bookmarks when UI is created
-  } else {
-    omnibarContainer.style.display = "flex";
+    justCreated = true;
   }
+
+  // --- Make UI visible and usable IMMEDIATELY ---
+  omnibarContainer.style.display = "flex";
   searchInput.value = ""; // Clear input
-  renderResults([]);
+  renderResults([]); // Render empty results initially
   searchInput.focus();
   document.addEventListener("keydown", handleGlobalKeys);
   document.addEventListener("click", handleClickOutside);
-  // Add visibility change listener when shown
   document.addEventListener("visibilitychange", handleVisibilityChange);
   isOmnibarVisible = true;
   console.log("Omnibar shown, visibility listener added.");
+  // --- End Immediate UI update ---
+
+  // --- Fetch bookmarks asynchronously ---
+  // Fetch only if the UI was just created, or perhaps if bookmarks are empty/stale?
+  // For now, let's fetch if just created or if fuse isn't ready.
+  if (justCreated || !fuse) {
+    console.log("Fetching bookmarks asynchronously...");
+    fetchBookmarks();
+  }
 }
 
 function hideOmnibar() {
@@ -107,17 +117,26 @@ function createOmnibarUI() {
 
 // --- Event Handlers ---
 function handleSearchInput(event) {
-  const query = event.target.value.trim(); // Trim whitespace
-  if (fuse) {
-    if (query) {
-      searchResults = fuse.search(query);
-      selectedIndex = 0; // Reset selection on new search
-      renderResults(searchResults);
-    } else {
-      // Clear results if query is empty
-      searchResults = [];
-      renderResults([]);
-    }
+  const query = event.target.value.trim();
+
+  // Check if Fuse is initialized before searching
+  if (!fuse) {
+    console.log("Fuse index not ready yet. Please wait for bookmarks to load.");
+    // Optionally, show a loading indicator in the results list
+    // resultsList.innerHTML = "<li>Loading bookmarks...</li>";
+    renderResults([]); // Keep results empty
+    return;
+  }
+
+  // Fuse is ready, proceed with search
+  if (query) {
+    searchResults = fuse.search(query);
+    selectedIndex = 0; // Reset selection on new search
+    renderResults(searchResults);
+  } else {
+    // Clear results if query is empty
+    searchResults = [];
+    renderResults([]);
   }
 }
 

@@ -126,7 +126,7 @@ body {
   font-size: 1em; /* Adjust as needed, relative to container */
   line-height: 1.4; /* Adjust as needed */
   padding: 10px 15px;
-  border-bottom: 1px solid var(--bff-border-color);
+  /* border-bottom: 1px solid var(--bff-border-color); */
   cursor: pointer;
   align-items: center;
   color: var(--bff-text-color);
