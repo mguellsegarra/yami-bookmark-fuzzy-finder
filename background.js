@@ -11,10 +11,17 @@ function injectContent(tab) {
             files: ["fuse.min.js", "content.js"], // Inject Fuse.js first
           })
           .then(() => {
-            chrome.scripting.insertCSS({
-              target: { tabId: tab.id },
-              files: ["styles.css"],
-            });
+            chrome.scripting
+              .insertCSS({
+                target: { tabId: tab.id },
+                files: ["styles.css"],
+              })
+              .then(() => {
+                // After successful injection, send the toggle message
+                setTimeout(() => {
+                  chrome.tabs.sendMessage(tab.id, { action: "toggle" });
+                }, 50); // Small delay to ensure everything is ready
+              });
           })
           .catch((err) =>
             console.error("Failed to inject script or CSS: ", err)

@@ -54,10 +54,12 @@ body {
   position: fixed;
   top: 30%; /* Adjust vertical position as needed */
   left: 50%;
-  transform: translateX(-50%);
+  transform: translateX(-50%) translateY(-20px);
+  opacity: 0;
   z-index: 2147483647; /* Max z-index */
   background-color: var(--bff-bg-color);
   border-radius: 8px;
+  border: 1px solid var(--bff-border-color);
   box-shadow: 0 10px 30px var(--bff-shadow-color);
   padding: 15px;
   width: 600px; /* Adjust width as needed */
@@ -65,7 +67,20 @@ body {
   display: flex;
   flex-direction: column;
   backdrop-filter: blur(5px); /* Optional: frosted glass effect */
+  animation: slideIn 0.2s ease-out forwards;
 }
+
+@keyframes slideIn {
+  0% {
+    opacity: 0;
+    transform: translateX(-50%) translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+}
+
 #bookmark-fuzzy-finder-container * {
   /* Ensure children inherit box-sizing */
   box-sizing: inherit;
