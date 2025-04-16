@@ -61,7 +61,7 @@ body {
   border-radius: 8px;
   border: 1px solid var(--bff-border-color);
   box-shadow: 0 10px 30px var(--bff-shadow-color);
-  padding: 15px;
+  /* padding: 15px; */
   width: 600px; /* Adjust width as needed */
   max-width: 90%;
   display: flex;
@@ -90,13 +90,11 @@ body {
   all: initial; /* Reset */
   font-family: inherit;
   font-size: 1.2em;
+  padding: 15px;
   line-height: inherit;
   width: 100%;
-  /* padding: 12px 15px; */
-  /* border: 1px solid var(--bff-border-color); */
   border-radius: 6px;
-  margin: 0 0 0 0; /* Adjusted margin */
-  /* background-color: var(--bff-bg-color); */
+  margin: 0;
   color: var(--bff-text-color);
   box-sizing: border-box;
   border: none;
@@ -108,7 +106,6 @@ body {
 #bookmark-fuzzy-finder-results {
   all: initial; /* Reset */
   list-style: none;
-  padding: 0;
   margin: 0;
   overflow-y: auto; /* Keep scrollbar if needed */
   scrollbar-width: thin;
@@ -118,7 +115,7 @@ body {
 
 /* Apply margin-top only when the list has children (is not empty) */
 #bookmark-fuzzy-finder-results:not(:empty) {
-  margin-top: 10px;
+  padding: 0 10px 10px 10px;
 }
 
 /* Webkit scrollbar styling (optional) */
@@ -148,6 +145,7 @@ body {
   color: var(--bff-text-color);
   box-sizing: border-box; /* Ensure box-sizing is consistent */
   overflow: hidden; /* Clip background for rounded corners */
+  gap: 8px;
 }
 
 #bookmark-fuzzy-finder-results ul {
@@ -164,21 +162,26 @@ body {
 
 /* Removed icon styles */
 
+#bookmark-fuzzy-finder-results li .title:empty {
+  display: none;
+  margin: 0;
+}
+
 #bookmark-fuzzy-finder-results li .title {
-  flex-grow: 1;
-  flex-shrink: 0; /* Title should not shrink */
+  display: inline;
+  flex-shrink: 0;
   white-space: nowrap;
-  /* min-width: 0; Removed - not needed if title doesn't truncate */
-  margin-right: 30px;
+  /* margin-right: 8px; */
 }
 
 #bookmark-fuzzy-finder-results li .url {
-  flex-grow: 0; /* URL should not grow */
-  flex-shrink: 1; /* URL *should* shrink (this is default, but explicit) */
+  display: inline;
   color: var(--bff-url-color);
   font-size: 0.9em;
+  white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  white-space: nowrap;
-  text-align: right;
+  flex: 1;
+  min-width: 0;
+  margin-left: 0;
 }
