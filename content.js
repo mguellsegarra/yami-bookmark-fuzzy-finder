@@ -23,20 +23,31 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
 });
 
 // --- Core Logic Functions ---
+
+// Handler for visibility change
+function handleVisibilityChange() {
+  if (document.hidden && isOmnibarVisible) {
+    console.log("Tab hidden, hiding omnibar.");
+    hideOmnibar();
+  }
+}
+
 function showOmnibar() {
   if (!omnibarContainer) {
-    createOmnibarUI(); // Create if it doesn't exist
-    fetchBookmarks(); // Fetch bookmarks only when showing for the first time or after closing fully
+    createOmnibarUI();
+    fetchBookmarks(); // Fetch bookmarks when UI is created
   } else {
-    omnibarContainer.style.display = "flex"; // Just show if already exists
+    omnibarContainer.style.display = "flex";
   }
   searchInput.value = ""; // Clear input
-  searchResults = bookmarks.map((b) => ({ item: b })); // Reset results
-  renderResults(); // Render initial/full list
+  renderResults([]);
   searchInput.focus();
-  document.addEventListener("keydown", handleGlobalKeys); // Re-attach global key listener
-  document.addEventListener("click", handleClickOutside); // Re-attach click listener
+  document.addEventListener("keydown", handleGlobalKeys);
+  document.addEventListener("click", handleClickOutside);
+  // Add visibility change listener when shown
+  document.addEventListener("visibilitychange", handleVisibilityChange);
   isOmnibarVisible = true;
+  console.log("Omnibar shown, visibility listener added.");
 }
 
 function hideOmnibar() {
@@ -44,7 +55,10 @@ function hideOmnibar() {
     omnibarContainer.style.display = "none";
     document.removeEventListener("keydown", handleGlobalKeys);
     document.removeEventListener("click", handleClickOutside);
+    // Remove visibility change listener when hidden
+    document.removeEventListener("visibilitychange", handleVisibilityChange);
     isOmnibarVisible = false;
+    console.log("Omnibar hidden, visibility listener removed.");
     // We don't destroy the container or listeners attached within createOmnibarUI
   }
 }
@@ -93,13 +107,17 @@ function createOmnibarUI() {
 
 // --- Event Handlers ---
 function handleSearchInput(event) {
-  const query = event.target.value;
+  const query = event.target.value.trim(); // Trim whitespace
   if (fuse) {
-    searchResults = query
-      ? fuse.search(query)
-      : bookmarks.map((b) => ({ item: b })); // Show all if empty
-    selectedIndex = 0; // Reset selection on new search
-    renderResults();
+    if (query) {
+      searchResults = fuse.search(query);
+      selectedIndex = 0; // Reset selection on new search
+      renderResults(searchResults);
+    } else {
+      // Clear results if query is empty
+      searchResults = [];
+      renderResults([]);
+    }
   }
 }
 
@@ -150,19 +168,22 @@ function handleClickOutside(event) {
 }
 
 // --- UI Rendering ---
-function renderResults() {
+function renderResults(resultsToRender) {
   if (!resultsList) return;
   resultsList.innerHTML = ""; // Clear previous results
 
-  searchResults.slice(0, 10).forEach((result, index) => {
-    // Limit to top 10 results
+  // Render only the top 3 results passed to the function
+  resultsToRender.slice(0, 3).forEach((result, index) => {
     const li = document.createElement("li");
     li.dataset.index = index;
-    if (index === selectedIndex) {
+    // Note: selectedIndex now refers to the index within the *original* searchResults
+    // We need to check if the current item's index in the original array matches
+    const originalIndex = searchResults.findIndex(
+      (r) => r.item.url === result.item.url
+    );
+    if (originalIndex === selectedIndex) {
       li.classList.add("selected");
     }
-
-    // --- Icon Handling REMOVED ---
 
     const titleSpan = document.createElement("span");
     titleSpan.className = "title";
@@ -181,20 +202,32 @@ function renderResults() {
       hideOmnibar();
     });
     li.addEventListener("mouseenter", () => {
-      selectedIndex = index;
-      updateSelection();
+      // Find the index in the original searchResults array
+      const hoverIndex = searchResults.findIndex(
+        (r) => r.item.url === result.item.url
+      );
+      if (hoverIndex !== -1) {
+        selectedIndex = hoverIndex;
+        updateSelection(resultsToRender.slice(0, 3)); // Pass the currently rendered items
+      }
     });
 
     resultsList.appendChild(li);
   });
 
-  updateSelection();
+  updateSelection(resultsToRender.slice(0, 3)); // Pass the currently rendered items
 }
 
-function updateSelection() {
+function updateSelection(renderedResults) {
   if (!resultsList) return;
+  // Update selection based on the currently rendered list items
   Array.from(resultsList.children).forEach((item, index) => {
-    const isSelected = index === selectedIndex;
+    // Find the corresponding full result based on the rendered item's URL (or title/data-index)
+    const renderedUrl = renderedResults[index]?.item.url;
+    const selectedUrl = searchResults[selectedIndex]?.item.url;
+    const isSelected =
+      renderedUrl && selectedUrl && renderedUrl === selectedUrl;
+
     item.classList.toggle("selected", isSelected);
     if (isSelected) {
       item.scrollIntoView({ block: "nearest", inline: "nearest" });
@@ -215,9 +248,9 @@ function initializeFuse(bookmarkData) {
     return;
   }
   fuse = new Fuse(bookmarkData, options);
-  // Initial render is now handled by showOmnibar
-  searchResults = bookmarks.map((b) => ({ item: b })); // Prepare initial results
-  renderResults();
+  // Don't render initial results here anymore
+  // searchResults = bookmarks.map((b) => ({ item: b }));
+  // renderResults();
 }
 
 function fetchBookmarks() {
