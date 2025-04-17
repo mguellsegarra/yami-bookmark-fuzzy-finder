@@ -14,6 +14,10 @@
   <img width="400" src="images/demo.gif" alt="Yami Demo">
 </p>
 
+<p align="center">
+<kbd>Ctrl</kbd> + <kbd>⇧</kbd> + <kbd>K</kbd> on Windows/Linux<br /><kbd>⌘</kbd> + <kbd>⇧</kbd> + <kbd>K</kbd> on macOS</p>
+<p align="center"><em>The keyboard shortcut is fully customizable in Chrome's extension settings</em></p>
+
 ## ✨ Features
 
 - 🔍 Fast fuzzy search through all your bookmarks
