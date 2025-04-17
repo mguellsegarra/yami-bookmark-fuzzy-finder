@@ -1,4 +1,4 @@
-<p align="center"><a href="https://chrome.google.com/webstore/detail/yami-bookmark-fuzzy-finder" target="_blank" rel="noreferrer noopener"><img width="380" alt="Yami's logo" src="images/logo.png" srcset="images/logo@2x.png 2x"></a></p>
+<p align="center"><a href="https://chrome.google.com/webstore/detail/yami-bookmark-fuzzy-finder" target="_blank" rel="noreferrer noopener"><img width="380" alt="Yami's logo" src="images/logo.png" srcset="images/logo.png 1x, images/logo@2x.png 2x"></a></p>
 
 <p align="center">Yami <strong>supercharges</strong> your bookmarks with <strong>lightning-fast</strong> fuzzy search capabilities.</p>
 
