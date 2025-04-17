@@ -11,44 +11,81 @@ let hasMouseMovedSinceRender = false;
 let lastMousePosition = null;
 
 // Translations for the search placeholder
-export const searchPlaceholderTranslations = {
-  // English
-  "en-GB": "Search bookmarks",
-  "en-US": "Search bookmarks",
+const searchPlaceholderTranslations = {
+  // ---------- English ----------
+  en: "Search bookmarks", // Generic English fallback
+  "en-US": "Search bookmarks", // United States
+  "en-GB": "Search bookmarks", // United Kingdom
 
-  // Chinese
-  "zh-CN": "搜索书签", // Simplified Chinese
-  "zh-TW": "搜尋書籤", // Traditional Chinese
-  "zh-HK": "搜尋書籤", // Hong Kong Traditional Chinese
+  // ---------- Chinese ----------
+  // Chrome uses 书签 (bookmark) → 搜索书签 (search bookmarks) for Simplified; 搜尋書籤 for Traditional
+  zh: "搜索书签", // Generic zh fallback (Simplified)
+  "zh-CN": "搜索书签", // Mainland China
+  "zh-SG": "搜索书签", // Singapore (Simplified)
+  "zh-TW": "搜尋書籤", // Taiwan (Traditional)
+  "zh-HK": "搜尋書籤", // Hong‑Kong (Traditional)
+  "zh-MO": "搜尋書籤", // Macau (Traditional)
 
-  // Spanish
+  // ---------- Spanish ----------
+  // Spain keeps the older "marcadores", LatAm migrated to "favoritos" (per Chrome Help docs)
+  es: "Buscar marcadores", // Generic Spanish fallback (=Spain)
   "es-ES": "Buscar marcadores", // Spain
-  "es-419": "Buscar marcadores", // Latin American Spanish
+  "es-419": "Buscar favoritos", // Latin‑American Spanish
+  "es-MX": "Buscar favoritos", // Mexico (inherits es‑419 wording)
 
-  // Portuguese
-  "pt-BR": "Pesquisar favoritos", // Brazilian Portuguese
-  "pt-PT": "Pesquisar marcadores", // European Portuguese
+  // ---------- Portuguese ----------
+  // Follows Chrome convention: BR = Favoritos, PT = Marcadores
+  pt: "Pesquisar favoritos", // Generic PT fallback (BR flavour is dominant on the Web)
+  "pt-BR": "Pesquisar favoritos", // Brazil
+  "pt-PT": "Pesquisar marcadores", // Portugal
 
-  // Other languages
-  hi: "बुकमार्क खोजें",
-  ar: "ابحث في الإشارات المرجعية",
-  bn: "বুকমার্কগুলি অনুসন্ধান করুন",
-  ru: "Поиск по закладкам", // Chrome RU: Закладки = Bookmarks
-  ja: "ブックマークを検索",
-  de: "Lesezeichen durchsuchen",
-  fr: "Rechercher dans les favoris",
-  id: "Cari bookmark",
-  ko: "북마크 검색",
-  tr: "Yer işaretlerini ara",
-  it: "Cerca nei preferiti", // Chrome IT: Preferiti
-  th: "ค้นหาบุ๊กมาร์ก",
-  fa: "جستجوی نشانک‌ها",
-  pl: "Szukaj zakładek",
-  nl: "Bladwijzers zoeken",
-  vi: "Tìm kiếm dấu trang",
-  ca: "Cerca a les adreces d'interès", // Chrome CA: adreces d'interès
-  eu: "Laster-markak bilatu", // Chrome EU: laster‑markak
-  gl: "Buscar marcadores", // Chrome GL: marcadores
+  // ---------- Indic & MENA languages ----------
+  hi: "बुकमार्क खोजें", // Hindi (generic)
+  "hi-IN": "बुकमार्क खोजें", // Hindi (India)
+  ar: "ابحث في الإشارات المرجعية", // Arabic (generic)
+  "ar-SA": "ابحث في الإشارات المرجعية", // Saudi Arabia
+  "ar-EG": "ابحث في الإشارات المرجعية", // Egypt
+  bn: "বুকমার্কগুলি অনুসন্ধান করুন", // Bengali (generic)
+  "bn-BD": "বুকমার্কগুলি অনুসন্ধান করুন", // Bangladesh
+  fa: "جستجوی نشانک‌ها", // Persian (Iran)
+
+  // ---------- European languages ----------
+  ru: "Поиск по закладкам", // Russian (generic)
+  "ru-RU": "Поиск по закладкам", // Russia
+  de: "Lesezeichen durchsuchen", // German (generic)
+  "de-DE": "Lesezeichen durchsuchen",
+  "de-AT": "Lesezeichen durchsuchen", // Austria
+  "de-CH": "Lesezeichen durchsuchen", // Switzerland
+  fr: "Rechercher dans les favoris", // French (generic)
+  "fr-FR": "Rechercher dans les favoris",
+  "fr-CA": "Rechercher dans les favoris", // Canada
+  it: "Cerca nei preferiti", // Italian (generic)
+  "it-IT": "Cerca nei preferiti",
+  pl: "Szukaj zakładek", // Polish
+  nl: "Bladwijzers zoeken", // Dutch (generic)
+  "nl-NL": "Bladwijzers zoeken",
+  "nl-BE": "Bladwijzers zoeken", // Belgium (Flemish)
+  tr: "Yer işaretlerini ara", // Turkish
+  ca: "Cerca a les adreces d'interès", // Catalan
+  eu: "Laster-markak bilatu", // Basque
+  gl: "Buscar marcadores", // Galician
+
+  // ---------- Asian languages ----------
+  ja: "ブックマークを検索", // Japanese
+  "ja-JP": "ブックマークを検索",
+  ko: "북마크 검색", // Korean
+  "ko-KR": "북마크 검색",
+  th: "ค้นหาบุ๊กมาร์ก", // Thai
+  id: "Cari bookmark", // Indonesian
+  "id-ID": "Cari bookmark",
+  vi: "Tìm kiếm dấu trang", // Vietnamese
+  "vi-VN": "Tìm kiếm dấu trang",
+
+  // ---------- Catch‑all (fallbacks) ----------
+  // These keys can be used when the specific locale isn't defined above
+  sv: "Sök bland bokmärken", // Swedish
+  da: "Søg i bogmærker", // Danish
+  fi: "Etsi kirjanmerkeistä", // Finnish
 };
 
 // Function to get the appropriate translation
@@ -281,7 +318,10 @@ function renderResults(resultsToRender) {
 
     const urlSpan = document.createElement("span");
     urlSpan.className = "url";
-    urlSpan.textContent = result.item.url.replace(/^https?:\/\//, "");
+    urlSpan.textContent = result.item.url
+      .replace(/^https?:\/\//, "") // Remove http:// or https://
+      .replace(/^www\./, "") // Remove www.
+      .replace(/\/$/, ""); // Remove trailing slash
 
     li.appendChild(favicon);
     li.appendChild(titleSpan);
