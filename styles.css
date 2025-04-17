@@ -37,27 +37,29 @@ body {
 #bookmark-fuzzy-finder-container {
   all: initial;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-  font-size: 16px;
-  line-height: 1.5;
-  box-sizing: border-box;
-  color: var(--bff-text-color);
-  position: fixed;
-  top: 30%;
-  left: 50%;
-  transform: translateX(-50%) translateY(-20px);
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif !important;
+  font-size: 16px !important;
+  line-height: 1.5 !important;
+  box-sizing: border-box !important;
+  color: var(--bff-text-color) !important;
+  position: fixed !important;
+  top: 30% !important;
+  left: 50% !important;
+  transform: translateX(-50%) translateY(-20px) !important;
   opacity: 0;
-  z-index: 2147483647;
-  background-color: var(--bff-bg-color);
-  border-radius: 8px;
-  border: 1px solid var(--bff-border-color);
-  box-shadow: 0 10px 30px var(--bff-shadow-color);
-  width: 600px;
-  max-width: 90%;
-  display: flex;
-  flex-direction: column;
-  backdrop-filter: blur(5px);
-  animation: slideIn 0.2s ease-out forwards;
+  z-index: 2147483647 !important;
+  background-color: var(--bff-bg-color) !important;
+  border-radius: 8px !important;
+  border: 1px solid var(--bff-border-color) !important;
+  box-shadow: 0 10px 30px var(--bff-shadow-color) !important;
+  width: 600px !important;
+  max-width: 90% !important;
+  display: flex !important;
+  flex-direction: column !important;
+  backdrop-filter: blur(5px) !important;
+  animation: slideIn 0.2s ease-out forwards !important;
+  text-align: left !important;
+  text-transform: none !important;
 }
 
 @keyframes slideIn {
@@ -72,21 +74,27 @@ body {
 }
 
 #bookmark-fuzzy-finder-container * {
-  box-sizing: inherit;
+  box-sizing: inherit !important;
+  font-family: inherit !important;
+  text-decoration: none !important;
+  text-transform: none !important;
+  font-weight: normal !important;
+  letter-spacing: normal !important;
 }
 
 #bookmark-fuzzy-finder-input {
   all: initial;
-  font-family: inherit;
-  font-size: 1.2em;
-  padding: 15px;
-  line-height: inherit;
-  width: 100%;
-  border-radius: 6px;
-  margin: 0;
-  color: var(--bff-text-color);
-  box-sizing: border-box;
-  border: none;
+  font-family: inherit !important;
+  font-size: 1.2em !important;
+  padding: 15px !important;
+  line-height: inherit !important;
+  width: 100% !important;
+  border-radius: 6px !important;
+  margin: 0 !important;
+  color: var(--bff-text-color) !important;
+  box-sizing: border-box !important;
+  border: none !important;
+  background: transparent !important;
 }
 
 #bookmark-fuzzy-finder-input:focus {
@@ -95,16 +103,18 @@ body {
 
 #bookmark-fuzzy-finder-results {
   all: initial;
-  list-style: none;
-  margin: 0;
-  overflow-y: auto;
-  scrollbar-width: thin;
-  scrollbar-color: var(--bff-border-color) transparent;
-  max-height: 30vh;
+  list-style: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  overflow-y: auto !important;
+  scrollbar-width: thin !important;
+  scrollbar-color: var(--bff-border-color) transparent !important;
+  max-height: 30vh !important;
+  background: transparent !important;
 }
 
 #bookmark-fuzzy-finder-results:not(:empty) {
-  padding: 0 10px 10px 10px;
+  padding: 0 10px 10px 10px !important;
 }
 
 #bookmark-fuzzy-finder-results::-webkit-scrollbar {
@@ -122,46 +132,71 @@ body {
 
 #bookmark-fuzzy-finder-results li {
   all: initial;
-  display: flex;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-  font-size: 1em;
-  line-height: 1.4;
-  padding: 10px 15px;
-  cursor: pointer;
-  align-items: center;
-  color: var(--bff-text-color);
-  box-sizing: border-box;
-  overflow: hidden;
-  gap: 8px;
+  display: flex !important;
+  font-family: inherit !important;
+  font-size: 1em !important;
+  line-height: 1.4 !important;
+  padding: 10px 15px !important;
+  cursor: pointer !important;
+  align-items: center !important;
+  color: var(--bff-text-color) !important;
+  box-sizing: border-box !important;
+  overflow: hidden !important;
+  gap: 8px !important;
+  background: transparent !important;
+  border: none !important;
+  margin: 0 !important;
+  text-decoration: none !important;
+  text-transform: none !important;
+  vertical-align: middle !important;
+  min-height: 36px !important;
 }
 
 #bookmark-fuzzy-finder-results li .favicon {
-  width: 16px;
-  height: 16px;
-  flex-shrink: 0;
-  object-fit: contain;
+  width: 16px !important;
+  height: 16px !important;
+  flex-shrink: 0 !important;
+  object-fit: contain !important;
+  display: inline-block !important;
+  vertical-align: middle !important;
+  margin: auto 0 !important;
 }
 
 #bookmark-fuzzy-finder-results li.selected {
-  border-radius: 6px;
-  background-color: var(--bff-highlight-bg);
+  border-radius: 6px !important;
+  background-color: var(--bff-highlight-bg) !important;
 }
 
 #bookmark-fuzzy-finder-results li .title {
-  display: inline;
-  flex-shrink: 0;
-  white-space: nowrap;
+  display: inline-flex !important;
+  flex-shrink: 0 !important;
+  white-space: nowrap !important;
+  color: var(--bff-text-color) !important;
+  font-weight: normal !important;
+  text-decoration: none !important;
+  text-transform: none !important;
+  font-size: 1em !important;
+  align-items: center !important;
+  height: 100% !important;
+  margin: auto 0 !important;
+  line-height: 1.4 !important;
+  vertical-align: middle !important;
 }
 
 #bookmark-fuzzy-finder-results li .url {
-  display: inline;
-  color: var(--bff-url-color);
-  font-size: 0.9em;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  flex: 1;
-  min-width: 0;
-  margin-left: 0;
+  display: inline-flex !important;
+  color: var(--bff-url-color) !important;
+  font-size: 0.9em !important;
+  white-space: nowrap !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  flex: 1 !important;
+  min-width: 0 !important;
+  margin: auto 0 !important;
+  text-decoration: none !important;
+  font-weight: normal !important;
+  align-items: center !important;
+  height: 100% !important;
+  line-height: 1.4 !important;
+  vertical-align: middle !important;
 }
