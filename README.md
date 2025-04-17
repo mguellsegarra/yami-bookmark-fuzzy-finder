@@ -1,8 +1,8 @@
+![Yami Chrome Extension](icons/icon128.png)
+
 # Yami – Fuzzy Finder for Bookmarks
 
 A Chrome extension that brings a Raycast-like fuzzy search interface to your browser bookmarks, allowing for lightning-fast bookmark access.
-
-![Yami Chrome Extension](icons/icon128.png)
 
 ## Features
 
