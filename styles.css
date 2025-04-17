@@ -148,6 +148,13 @@ body {
   gap: 8px;
 }
 
+#bookmark-fuzzy-finder-results li .favicon {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+  object-fit: contain;
+}
+
 #bookmark-fuzzy-finder-results ul {
   margin-top: 10px;
 }

@@ -8,6 +8,14 @@ let searchInput;
 let resultsList;
 let isOmnibarVisible = false;
 
+// --- Helper Functions ---
+function getFaviconUrl(url) {
+  const faviconUrl = new URL(chrome.runtime.getURL("/_favicon/"));
+  faviconUrl.searchParams.set("pageUrl", url);
+  faviconUrl.searchParams.set("size", "32");
+  return faviconUrl.toString();
+}
+
 // --- Message Listener (Top Level) ---
 chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
   console.log("Message received in content script:", request);
@@ -199,6 +207,14 @@ function renderResults(resultsToRender) {
       li.classList.add("selected");
     }
 
+    // Create favicon image
+    const favicon = document.createElement("img");
+    favicon.className = "favicon";
+    favicon.src = getFaviconUrl(result.item.url);
+    favicon.width = 16;
+    favicon.height = 16;
+    favicon.alt = "";
+
     const titleSpan = document.createElement("span");
     titleSpan.className = "title";
     titleSpan.textContent = result.item.title || "";
@@ -207,6 +223,7 @@ function renderResults(resultsToRender) {
     urlSpan.className = "url";
     urlSpan.textContent = result.item.url;
 
+    li.appendChild(favicon);
     li.appendChild(titleSpan);
     li.appendChild(urlSpan);
 
