@@ -17,10 +17,16 @@
 ## ✨ Features
 
 - 🔍 Fast fuzzy search through all your bookmarks
-- ⌨️ Keyboard-first interface inspired by Raycast
+- ⌨️ Keyboard-first interface inspired by [Raycast](https://www.raycast.com/)
 - ⚡ Instant results as you type
 - 🎯 Quick access with keyboard shortcut (⌘⇧K on Mac, Ctrl+Shift+K on Windows/Linux)
 - 🖼️ Favicon support for visual recognition
+
+## 🌎 Localization
+
+Yami is fully localized and automatically detects your browser's language. Supported languages include:
+
+Catalan, English (US, UK), Chinese (Simplified & Traditional for Mainland China, Singapore, Taiwan, Hong Kong, Macau), Spanish (Spain, Latin America), Portuguese (Brazil, Portugal), Hindi, Arabic, Bengali, Persian, Russian, German (Germany, Austria, Switzerland), French (France, Canada), Italian, Polish, Dutch (Netherlands, Belgium), Turkish, Basque, Galician, Japanese, Korean, Thai, Indonesian, Vietnamese, Swedish, Danish, and Finnish.
 
 ## 🚀 Installation
 
