@@ -45,8 +45,8 @@ body {
   position: fixed !important;
   top: 30% !important;
   left: 50% !important;
-  transform: translateX(-50%) translateY(-20px) !important;
-  opacity: 0;
+  transform: translate(-50%) !important;
+  opacity: 0 !important;
   z-index: 2147483647 !important;
   background-color: var(--bff-bg-color) !important;
   border-radius: 8px !important;
@@ -54,23 +54,16 @@ body {
   box-shadow: 0 10px 30px var(--bff-shadow-color) !important;
   width: 600px !important;
   max-width: 90% !important;
-  display: flex !important;
+  display: none !important;
   flex-direction: column !important;
   backdrop-filter: blur(5px) !important;
-  animation: slideIn 0.2s ease-out forwards !important;
   text-align: left !important;
   text-transform: none !important;
 }
 
-@keyframes slideIn {
-  0% {
-    opacity: 0;
-    transform: translateX(-50%) translateY(-20px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateX(-50%) translateY(0);
-  }
+#bookmark-fuzzy-finder-container.visible {
+  display: flex !important;
+  opacity: 1 !important;
 }
 
 #bookmark-fuzzy-finder-container * {

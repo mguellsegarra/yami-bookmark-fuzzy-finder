@@ -43,7 +43,7 @@ function showOmnibar() {
     justCreated = true;
   }
 
-  omnibarContainer.style.display = "flex";
+  omnibarContainer.classList.add("visible");
   searchInput.value = "";
   renderResults([]);
   searchInput.focus();
@@ -59,7 +59,7 @@ function showOmnibar() {
 
 function hideOmnibar() {
   if (omnibarContainer) {
-    omnibarContainer.style.display = "none";
+    omnibarContainer.classList.remove("visible");
     document.removeEventListener("keydown", handleGlobalKeys);
     document.removeEventListener("click", handleClickOutside);
     document.removeEventListener("visibilitychange", handleVisibilityChange);
