@@ -61,15 +61,12 @@ To contribute to this project:
 
 Contributions are welcome! Please feel free to submit a Pull Request.
 
----
-
 If you find this extension useful, please consider:
 
 - ⭐ Starring the repository
 - 🐛 Reporting any bugs you find
 - 💡 Suggesting new features
-- 🤝 Contributing to the code
-
+  
 ##  License 📄
 
 This project is licensed under the [**MIT License**](https://github.com/mguellsegarra/yami-bookmark-fuzzy-finder/blob/main/LICENSE).
