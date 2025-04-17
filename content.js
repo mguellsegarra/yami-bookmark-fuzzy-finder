@@ -107,7 +107,7 @@ function createOmnibarUI() {
   searchInput = document.createElement("input");
   searchInput.id = "bookmark-fuzzy-finder-input";
   searchInput.type = "text";
-  searchInput.placeholder = "type to search...";
+  searchInput.placeholder = "Search bookmarks...";
 
   resultsList = document.createElement("ul");
   resultsList.id = "bookmark-fuzzy-finder-results";
