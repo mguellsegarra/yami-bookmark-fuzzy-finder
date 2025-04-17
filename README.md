@@ -1,11 +1,16 @@
-# 🔍 ⭐️ Yami – Fuzzy Finder for Bookmarks
+<p align="center"><a href="https://chrome.google.com/webstore/detail/yami-bookmark-fuzzy-finder" target="_blank" rel="noreferrer noopener"><img width="380" alt="Yami's logo" src="images/logo.png"></a></p>
 
-![Yami Chrome Extension](icons/icon128.png)
+<p align="center">Yami <strong>supercharges</strong> your bookmarks with <strong>lightning-fast</strong> fuzzy search capabilities.</p>
 
-A Chrome extension that brings a Raycast-like fuzzy search interface to your browser bookmarks, allowing for lightning-fast bookmark access.
+<p align="center">
+<a rel="noreferrer noopener" href="https://chrome.google.com/webstore/detail/yami-bookmark-fuzzy-finder"><img alt="Chrome Web Store" src="https://img.shields.io/badge/Google%20Chrome-4285F4?logo=GoogleChrome&logoColor=white"></a>
+</p>
 
-**Visit on [Chrome Web Store](https://chrome.google.com/webstore/detail/vimium-c-all-by-keyboard/hfjbmagddngcpeloejdejnfgbamkjaeg
-  )**
+<h2 align="center">Yami – Fuzzy Finder for Bookmarks</h2>
+
+
+<p align="center">Yami is an <strong>open-source</strong> MIT-licensed <strong>Chrome extension</strong> that brings a Raycast-like interface to your browser bookmarks. With <strong>keyboard-first</strong> design and <strong>fuzzy search</strong> capabilities, it enables instant access to your bookmarks with minimal keystrokes.</p>
+
 
 ## ✨ Features
 
