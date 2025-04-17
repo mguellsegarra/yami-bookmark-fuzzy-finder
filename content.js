@@ -7,6 +7,8 @@ let omnibarContainer;
 let searchInput;
 let resultsList;
 let isOmnibarVisible = false;
+let hasMouseMovedSinceRender = false;
+let lastMousePosition = null;
 
 // --- Helper Functions ---
 function getFaviconUrl(url) {
@@ -36,6 +38,12 @@ function handleVisibilityChange() {
   }
 }
 
+function handleWindowBlur() {
+  if (isOmnibarVisible) {
+    hideOmnibar();
+  }
+}
+
 function showOmnibar() {
   let justCreated = false;
   if (!omnibarContainer) {
@@ -43,6 +51,8 @@ function showOmnibar() {
     justCreated = true;
   }
 
+  hasMouseMovedSinceRender = false;
+  lastMousePosition = null;
   omnibarContainer.classList.add("visible");
   searchInput.value = "";
   renderResults([]);
@@ -50,6 +60,7 @@ function showOmnibar() {
   document.addEventListener("keydown", handleGlobalKeys);
   document.addEventListener("click", handleClickOutside);
   document.addEventListener("visibilitychange", handleVisibilityChange);
+  window.addEventListener("blur", handleWindowBlur);
   isOmnibarVisible = true;
 
   if (justCreated || !fuse) {
@@ -63,6 +74,8 @@ function hideOmnibar() {
     document.removeEventListener("keydown", handleGlobalKeys);
     document.removeEventListener("click", handleClickOutside);
     document.removeEventListener("visibilitychange", handleVisibilityChange);
+    document.removeEventListener("mousemove", handleFirstMouseMove);
+    window.removeEventListener("blur", handleWindowBlur);
     isOmnibarVisible = false;
   }
 }
@@ -159,10 +172,33 @@ function handleClickOutside(event) {
   }
 }
 
+// Add handler for first mouse movement
+function handleFirstMouseMove(e) {
+  // Only count movement if the mouse position has actually changed since results rendered
+  if (
+    lastMousePosition &&
+    (e.clientX !== lastMousePosition.x || e.clientY !== lastMousePosition.y)
+  ) {
+    hasMouseMovedSinceRender = true;
+    document.removeEventListener("mousemove", handleFirstMouseMove);
+  }
+}
+
 // --- UI Rendering ---
 function renderResults(resultsToRender) {
   if (!resultsList) return;
   resultsList.innerHTML = "";
+
+  // Store current mouse position when rendering results
+  lastMousePosition = { x: 0, y: 0 };
+  const mouseEvent = window.event;
+  if (mouseEvent && "clientX" in mouseEvent) {
+    lastMousePosition.x = mouseEvent.clientX;
+    lastMousePosition.y = mouseEvent.clientY;
+  }
+
+  hasMouseMovedSinceRender = false; // Reset flag when rendering new results
+  document.addEventListener("mousemove", handleFirstMouseMove); // Re-add the listener
 
   resultsToRender.forEach((result, index) => {
     const li = document.createElement("li");
@@ -195,7 +231,9 @@ function renderResults(resultsToRender) {
       openBookmark(result.item.url);
       hideOmnibar();
     });
+
     li.addEventListener("mouseenter", () => {
+      if (!hasMouseMovedSinceRender) return;
       selectedIndex = index;
       updateSelection();
     });
