@@ -7,7 +7,7 @@ A Chrome extension that brings a Raycast-like fuzzy search interface to your bro
 **Visit on [Chrome Web Store](https://chrome.google.com/webstore/detail/vimium-c-all-by-keyboard/hfjbmagddngcpeloejdejnfgbamkjaeg
   )**
 
-## Features
+## ✨ Features
 
 - 🔍 Fast fuzzy search through all your bookmarks
 - ⌨️ Keyboard-first interface inspired by Raycast
@@ -15,7 +15,7 @@ A Chrome extension that brings a Raycast-like fuzzy search interface to your bro
 - 🎯 Quick access with keyboard shortcut (⌘⇧K on Mac, Ctrl+Shift+K on Windows/Linux)
 - 🖼️ Favicon support for visual recognition
 
-## Installation
+## 🚀 Installation
 
 1. Install from the Chrome Web Store (coming soon)
 2. Or install manually:
@@ -24,14 +24,14 @@ A Chrome extension that brings a Raycast-like fuzzy search interface to your bro
    - Enable "Developer mode" in the top right
    - Click "Load unpacked" and select the extension directory
 
-## Usage
+## 📖 Usage
 
 1. Press `⌘⇧K` (Mac) or `Ctrl+Shift+K` (Windows/Linux) to open the bookmark finder
 2. Start typing to search through your bookmarks
 3. Use arrow keys to navigate results
 4. Press Enter to open the selected bookmark
 
-### Customizing Shortcuts
+### ⚙️ Customizing Shortcuts
 
 You can customize the keyboard shortcut:
 
@@ -41,7 +41,7 @@ You can customize the keyboard shortcut:
 4. Press your desired key combination
 5. Click OK to save
 
-## Permissions
+## 🔐 Permissions
 
 This extension requires the following permissions:
 
@@ -51,7 +51,7 @@ This extension requires the following permissions:
 - `scripting`: For extension functionality
 - `favicon`: To display website favicons
 
-## Development
+## 👨‍💻 Development
 
 To contribute to this project:
 
@@ -60,7 +60,7 @@ To contribute to this project:
 3. Test the extension locally using Chrome's developer mode
 4. Submit a pull request
 
-## Contributing
+## 🤝 Contributing
 
 Contributions are welcome! Please feel free to submit a Pull Request.
 
@@ -69,15 +69,15 @@ If you find this extension useful, please consider:
 - ⭐ Starring the repository
 - 🐛 Reporting any bugs you find
 - 💡 Suggesting new features
-  
-##  License 📄
+
+## 📄 License
 
 This project is licensed under the [**MIT License**](https://github.com/mguellsegarra/yami-bookmark-fuzzy-finder/blob/main/LICENSE).
 
-##  Author 🙋🏽‍♂️
+## 👋 Author
 
 I'm Marc Güell Segarra, a freelance software developer at [Ondori.dev](https://ondori.dev).
 
-##  Buy Me a Coffee ☕
+## ☕ Buy Me a Coffee
 
 If you found this extension useful, consider **[buying me a coffee](https://buymeacoffee.com/mguellsegarra)!**
