@@ -10,6 +10,66 @@ let isOmnibarVisible = false;
 let hasMouseMovedSinceRender = false;
 let lastMousePosition = null;
 
+// Translations for the search placeholder
+export const searchPlaceholderTranslations = {
+  // English
+  "en-GB": "Search bookmarks",
+  "en-US": "Search bookmarks",
+
+  // Chinese
+  "zh-CN": "搜索书签", // Simplified Chinese
+  "zh-TW": "搜尋書籤", // Traditional Chinese
+  "zh-HK": "搜尋書籤", // Hong Kong Traditional Chinese
+
+  // Spanish
+  "es-ES": "Buscar marcadores", // Spain
+  "es-419": "Buscar marcadores", // Latin American Spanish
+
+  // Portuguese
+  "pt-BR": "Pesquisar favoritos", // Brazilian Portuguese
+  "pt-PT": "Pesquisar marcadores", // European Portuguese
+
+  // Other languages
+  hi: "बुकमार्क खोजें",
+  ar: "ابحث في الإشارات المرجعية",
+  bn: "বুকমার্কগুলি অনুসন্ধান করুন",
+  ru: "Поиск по закладкам", // Chrome RU: Закладки = Bookmarks
+  ja: "ブックマークを検索",
+  de: "Lesezeichen durchsuchen",
+  fr: "Rechercher dans les favoris",
+  id: "Cari bookmark",
+  ko: "북마크 검색",
+  tr: "Yer işaretlerini ara",
+  it: "Cerca nei preferiti", // Chrome IT: Preferiti
+  th: "ค้นหาบุ๊กมาร์ก",
+  fa: "جستجوی نشانک‌ها",
+  pl: "Szukaj zakładek",
+  nl: "Bladwijzers zoeken",
+  vi: "Tìm kiếm dấu trang",
+  ca: "Cerca a les adreces d'interès", // Chrome CA: adreces d'interès
+  eu: "Laster-markak bilatu", // Chrome EU: laster‑markak
+  gl: "Buscar marcadores", // Chrome GL: marcadores
+};
+
+// Function to get the appropriate translation
+function getSearchPlaceholder() {
+  const fullLocale = chrome.i18n.getUILanguage(); // Get full locale (e.g. zh-TW, pt-BR)
+  const baseLocale = fullLocale.split("-")[0]; // Get base locale (e.g. zh, pt)
+
+  // First try the full locale (e.g. zh-TW)
+  if (searchPlaceholderTranslations[fullLocale]) {
+    return searchPlaceholderTranslations[fullLocale] + "...";
+  }
+
+  // Then try the base locale (e.g. zh)
+  if (searchPlaceholderTranslations[baseLocale]) {
+    return searchPlaceholderTranslations[baseLocale] + "...";
+  }
+
+  // Fallback to English
+  return searchPlaceholderTranslations.en + "...";
+}
+
 // --- Helper Functions ---
 function getFaviconUrl(url) {
   const faviconUrl = new URL(chrome.runtime.getURL("/_favicon/"));
@@ -99,7 +159,7 @@ function createOmnibarUI() {
   searchInput = document.createElement("input");
   searchInput.id = "bookmark-fuzzy-finder-input";
   searchInput.type = "text";
-  searchInput.placeholder = "Search bookmarks...";
+  searchInput.placeholder = getSearchPlaceholder();
 
   resultsList = document.createElement("ul");
   resultsList.id = "bookmark-fuzzy-finder-results";
