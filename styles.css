@@ -146,6 +146,7 @@ body {
   text-transform: none !important;
   vertical-align: middle !important;
   min-height: 36px !important;
+  width: 100% !important;
 }
 
 #bookmark-fuzzy-finder-results li .favicon {
@@ -177,10 +178,13 @@ body {
   margin: auto 0 !important;
   line-height: 1.4 !important;
   vertical-align: middle !important;
+  max-width: 200px !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
 }
 
 #bookmark-fuzzy-finder-results li .url {
-  display: inline-flex !important;
+  display: inline-block !important;
   color: var(--bff-url-color) !important;
   font-size: 0.9em !important;
   white-space: nowrap !important;
@@ -191,8 +195,6 @@ body {
   margin: auto 0 !important;
   text-decoration: none !important;
   font-weight: normal !important;
-  align-items: center !important;
-  height: 100% !important;
   line-height: 1.4 !important;
   vertical-align: middle !important;
 }
