@@ -47,6 +47,7 @@ body {
   left: 50% !important;
   transform: translate(-50%) !important;
   opacity: 0 !important;
+  visibility: hidden !important;
   z-index: 2147483647 !important;
   background-color: var(--bff-bg-color) !important;
   border-radius: 8px !important;
@@ -54,7 +55,7 @@ body {
   box-shadow: 0 10px 30px var(--bff-shadow-color) !important;
   width: 600px !important;
   max-width: 90% !important;
-  display: none !important;
+  display: flex !important;
   flex-direction: column !important;
   backdrop-filter: blur(5px) !important;
   text-align: left !important;
@@ -62,8 +63,10 @@ body {
 }
 
 #bookmark-fuzzy-finder-container.visible {
-  display: flex !important;
   opacity: 1 !important;
+  visibility: visible !important;
+  transform: translate(-50%) !important;
+  transition: opacity 0.2s ease-out !important;
 }
 
 #bookmark-fuzzy-finder-container * {
