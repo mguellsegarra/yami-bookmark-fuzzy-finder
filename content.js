@@ -185,7 +185,7 @@ function renderResults(resultsToRender) {
 
     const urlSpan = document.createElement("span");
     urlSpan.className = "url";
-    urlSpan.textContent = result.item.url;
+    urlSpan.textContent = result.item.url.replace(/^https?:\/\//, "");
 
     li.appendChild(favicon);
     li.appendChild(titleSpan);

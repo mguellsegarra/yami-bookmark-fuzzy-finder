@@ -166,7 +166,7 @@ body {
 
 #bookmark-fuzzy-finder-results li .title {
   display: inline-block !important;
-  flex: 1 !important;
+  flex: 0 1 auto !important;
   min-width: 0 !important;
   white-space: nowrap !important;
   color: var(--bff-text-color) !important;
@@ -196,10 +196,12 @@ body {
   font-weight: normal !important;
   line-height: 1.4 !important;
   vertical-align: middle !important;
-  max-width: 50% !important;
+  text-align: right !important;
 }
 
-/* When there's no title, let URL take full remaining width */
+/* When there's no title, let URL take full width */
 #bookmark-fuzzy-finder-results li:not(:has(.title)) .url {
-  max-width: 100% !important;
+  flex: 1 !important;
+  margin: auto 0 !important;
+  text-align: left !important;
 }
