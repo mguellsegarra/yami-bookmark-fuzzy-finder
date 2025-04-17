@@ -1,8 +1,15 @@
 {
   "manifest_version": 3,
-  "name": "Bookmark Fuzzy Finder",
+  "name": "Yami – Fuzzy Finder for Bookmarks",
   "version": "1.0",
-  "description": "Quickly search and open bookmarks with a Raycast-like interface",
+  "description": "Quickly fuzzy search and open bookmarks with a Raycast-like interface.",
+  "author": "Marc Güell Segarra",
+  "homepage_url": "https://github.com/mguellsegarra/yami-bookmark-fuzzy-finder",
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
   "permissions": ["bookmarks", "commands", "activeTab", "scripting", "favicon"],
   "action": {},
   "background": {
