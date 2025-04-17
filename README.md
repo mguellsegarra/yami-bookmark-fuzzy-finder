@@ -8,7 +8,7 @@
 
 <h2 align="center">Yami – Fuzzy Finder for Bookmarks</h2>
 
-<p align="center">Yami is an <strong>open-source</strong> MIT-licensed <strong>Chrome extension</strong> that brings a Raycast-like interface to your browser bookmarks. With <strong>keyboard-first</strong> design and <strong>fuzzy search</strong> capabilities, it enables instant access to your bookmarks with minimal keystrokes.</p>
+<p align="center">Yami is an <strong>open-source</strong> MIT-licensed <strong>Chromium based browser extension</strong> that brings a Raycast-like interface to your bookmarks. Compatible with Chrome and other Chromium-based browsers, it features a <strong>keyboard-first</strong> design and <strong>fuzzy search</strong> capabilities, enabling instant access to your bookmarks with minimal keystrokes.</p>
 
 <p align="center">
   <img width="400" src="images/demo.gif" alt="Yami Demo">
@@ -16,7 +16,7 @@
 
 <p align="center">
 <kbd>Ctrl</kbd> + <kbd>⇧</kbd> + <kbd>K</kbd> on Windows/Linux<br /><kbd>⌘</kbd> + <kbd>⇧</kbd> + <kbd>K</kbd> on macOS</p>
-<p align="center"><em>The keyboard shortcut is fully customizable in Chrome's extension settings</em></p>
+<p align="center"><em>The keyboard shortcut is fully customizable in Chrome extension shortcuts section</em></p>
 
 ## ✨ Features
 
@@ -28,10 +28,10 @@
 
 ## 🚀 Installation
 
-1. Install from the Chrome Web Store (coming soon)
+1. Install from the [Chrome Web Store](https://chrome.google.com/webstore/detail/yami-bookmark-fuzzy-finder)
 2. Or install manually:
    - Clone this repository
-   - Open Chrome and navigate to `chrome://extensions/`
+   - Open Chrome or your Chromium-based browser and navigate to `chrome://extensions/`
    - Enable "Developer mode" in the top right
    - Click "Load unpacked" and select the extension directory
 
