@@ -22,12 +22,6 @@
 - 🎯 Quick access with keyboard shortcut (⌘⇧K on Mac, Ctrl+Shift+K on Windows/Linux)
 - 🖼️ Favicon support for visual recognition
 
-## 🌎 Localization
-
-Yami is fully localized and automatically detects your browser's language. Supported languages include:
-
-Catalan, English (US, UK), Chinese (Simplified & Traditional for Mainland China, Singapore, Taiwan, Hong Kong, Macau), Spanish (Spain, Latin America), Portuguese (Brazil, Portugal), Hindi, Arabic, Bengali, Persian, Russian, German (Germany, Austria, Switzerland), French (France, Canada), Italian, Polish, Dutch (Netherlands, Belgium), Turkish, Basque, Galician, Japanese, Korean, Thai, Indonesian, Vietnamese, Swedish, Danish, and Finnish.
-
 ## 🚀 Installation
 
 1. Install from the Chrome Web Store (coming soon)
@@ -63,6 +57,12 @@ This extension requires the following permissions:
 - `activeTab`: To interact with the current tab
 - `scripting`: For extension functionality
 - `favicon`: To display website favicons
+
+## 🌎 Localization
+
+Yami is fully localized and automatically detects your browser's language. Supported languages include:
+
+Catalan, English (US, UK), Chinese (Simplified & Traditional for Mainland China, Singapore, Taiwan, Hong Kong, Macau), Spanish (Spain, Latin America), Portuguese (Brazil, Portugal), Hindi, Arabic, Bengali, Persian, Russian, German (Germany, Austria, Switzerland), French (France, Canada), Italian, Polish, Dutch (Netherlands, Belgium), Turkish, Basque, Galician, Japanese, Korean, Thai, Indonesian, Vietnamese, Swedish, Danish, and Finnish.
 
 ## 👨‍💻 Development
 
