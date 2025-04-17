@@ -1,0 +1,18 @@
+{
+  "extName": {
+    "message": "يامي - باحث Fuzzy للإشارات المرجعية",
+    "description": "The name of the extension"
+  },
+  "extDescription": {
+    "message": "ابحث وافتح إشاراتك المرجعية بسرعة باستخدام واجهة سريعة تعمل بلوحة المفاتيح مع fuzzy matching.",
+    "description": "The description of the extension"
+  },
+  "searchPlaceholder": {
+    "message": "ابحث في الإشارات المرجعية...",
+    "description": "Placeholder text shown in the search input field"
+  },
+  "commandDescription": {
+    "message": "فتح باحث Fuzzy للإشارات المرجعية",
+    "description": "Description of the keyboard shortcut command"
+  }
+}

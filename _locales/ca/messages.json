@@ -1,0 +1,18 @@
+{
+  "extName": {
+    "message": "Yami – Cerca ràpida d'adreces d'interès",
+    "description": "The name of the extension"
+  },
+  "extDescription": {
+    "message": "Cerca i obre adreces d'interès ràpidament amb una interfície similar a Raycast.",
+    "description": "The description of the extension"
+  },
+  "searchPlaceholder": {
+    "message": "Cerca a les adreces d'interès...",
+    "description": "Placeholder text shown in the search input field"
+  },
+  "commandDescription": {
+    "message": "Obre la cerca difusa d'adreces d'interès",
+    "description": "Description of the keyboard shortcut command"
+  }
+}

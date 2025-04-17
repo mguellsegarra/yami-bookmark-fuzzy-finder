@@ -1,0 +1,18 @@
+{
+  "extName": {
+    "message": "Yami – การค้นหาบุ๊กมาร์กแบบ Fuzzy",
+    "description": "The name of the extension"
+  },
+  "extDescription": {
+    "message": "ค้นหาและเปิดบุ๊กมาร์กอย่างรวดเร็วด้วยอินเทอร์เฟซแบบ Raycast",
+    "description": "The description of the extension"
+  },
+  "searchPlaceholder": {
+    "message": "ค้นหาบุ๊กมาร์ก...",
+    "description": "Placeholder text shown in the search input field"
+  },
+  "commandDescription": {
+    "message": "เปิดการค้นหาบุ๊กมาร์กแบบ Fuzzy",
+    "description": "Description of the keyboard shortcut command"
+  }
+}

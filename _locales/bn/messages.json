@@ -1,0 +1,18 @@
+{
+  "extName": {
+    "message": "Yami – বুকমার্ক fuzzy অনুসন্ধান",
+    "description": "The name of the extension"
+  },
+  "extDescription": {
+    "message": "দ্রুত কীবোর্ড-চালিত ইন্টারফেস এবং fuzzy matching ব্যবহার করে আপনার বুকমার্কগুলি দ্রুত খুঁজুন এবং খুলুন।",
+    "description": "The description of the extension"
+  },
+  "searchPlaceholder": {
+    "message": "বুকমার্কগুলি অনুসন্ধান করুন...",
+    "description": "Placeholder text shown in the search input field"
+  },
+  "commandDescription": {
+    "message": "বুকমার্ক fuzzy অনুসন্ধান খুলুন",
+    "description": "Description of the keyboard shortcut command"
+  }
+}

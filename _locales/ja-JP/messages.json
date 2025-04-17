@@ -1,0 +1,18 @@
+{
+  "extName": {
+    "message": "Yami やみ – ブックマークの Fuzzy 検索",
+    "description": "The name of the extension"
+  },
+  "extDescription": {
+    "message": "高速なキーボード駆動のインターフェースと fuzzy matching で素早くブックマークを検索して開きます。",
+    "description": "The description of the extension"
+  },
+  "searchPlaceholder": {
+    "message": "ブックマークを検索...",
+    "description": "Placeholder text shown in the search input field"
+  },
+  "commandDescription": {
+    "message": "ブックマークの Fuzzy 検索を開く",
+    "description": "Description of the keyboard shortcut command"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "extName": {
+    "message": "Yami – 書籤模糊搜尋",
+    "description": "The name of the extension"
+  },
+  "extDescription": {
+    "message": "使用快速的鍵盤驅動介面和 fuzzy matching 快速搜尋和開啟您的書籤。",
+    "description": "The description of the extension"
+  },
+  "searchPlaceholder": {
+    "message": "搜尋書籤...",
+    "description": "Placeholder text shown in the search input field"
+  },
+  "commandDescription": {
+    "message": "開啟書籤模糊搜尋",
+    "description": "Description of the keyboard shortcut command"
+  }
+}

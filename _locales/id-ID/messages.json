@@ -1,0 +1,18 @@
+{
+  "extName": {
+    "message": "Yami – Pencarian Fuzzy untuk Bookmark",
+    "description": "The name of the extension"
+  },
+  "extDescription": {
+    "message": "Cari dan buka bookmark Anda dengan cepat menggunakan antarmuka cepat berbasis keyboard dengan fuzzy matching.",
+    "description": "The description of the extension"
+  },
+  "searchPlaceholder": {
+    "message": "Cari bookmark...",
+    "description": "Placeholder text shown in the search input field"
+  },
+  "commandDescription": {
+    "message": "Buka pencarian fuzzy bookmark",
+    "description": "Description of the keyboard shortcut command"
+  }
+}

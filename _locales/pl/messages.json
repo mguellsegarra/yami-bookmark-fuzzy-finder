@@ -1,0 +1,18 @@
+{
+  "extName": {
+    "message": "Yami – Fuzzy wyszukiwanie zakładek",
+    "description": "The name of the extension"
+  },
+  "extDescription": {
+    "message": "Szybko wyszukuj i otwieraj zakładki z interfejsem podobnym do Raycast.",
+    "description": "The description of the extension"
+  },
+  "searchPlaceholder": {
+    "message": "Szukaj zakładek...",
+    "description": "Placeholder text shown in the search input field"
+  },
+  "commandDescription": {
+    "message": "Otwórz fuzzy wyszukiwanie zakładek",
+    "description": "Description of the keyboard shortcut command"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "extName": {
+    "message": "Yami – Fuzzy-sökning för bokmärken",
+    "description": "The name of the extension"
+  },
+  "extDescription": {
+    "message": "Sök och öppna dina bokmärken snabbt med ett snabbt, tangentbordsstyrt gränssnitt med fuzzy matching.",
+    "description": "The description of the extension"
+  },
+  "searchPlaceholder": {
+    "message": "Sök bland bokmärken...",
+    "description": "Placeholder text shown in the search input field"
+  },
+  "commandDescription": {
+    "message": "Öppna fuzzy-sökning för bokmärken",
+    "description": "Description of the keyboard shortcut command"
+  }
+}

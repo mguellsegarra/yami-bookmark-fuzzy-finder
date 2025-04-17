@@ -8,7 +8,7 @@
 
 <h2 align="center">Yami – Fuzzy Finder for Bookmarks</h2>
 
-<p align="center">Yami is an <strong>open-source</strong> MIT-licensed <strong>Chromium based browser extension</strong> that brings a Raycast-like interface to your bookmarks. Compatible with Chrome and other Chromium-based browsers, it features a <strong>keyboard-first</strong> design and <strong>fuzzy search</strong> capabilities, enabling instant access to your bookmarks with minimal keystrokes.</p>
+<p align="center"><strong>Yami</strong> is an <strong>open-source</strong>, MIT-licensed <strong>browser extension</strong> for Chromium-based browsers like Chrome. It offers a fast, <strong>keyboard-first interface</strong> with <strong>fuzzy search</strong> support, letting you instantly find and open your bookmarks with just a few keystrokes.</p>
 
 <p align="center">
   <img width="400" src="images/demo.gif" alt="Yami Demo">
