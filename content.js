@@ -127,11 +127,13 @@ function createOmnibarUI() {
 function handleSearchInput(event) {
   const query = event.target.value.trim();
 
+  // Always reset selectedIndex when input changes
+  selectedIndex = 0;
+
   // Check if Fuse is initialized before searching
   if (!fuse) {
     console.log("Fuse index not ready yet. Please wait for bookmarks to load.");
-    // Optionally, show a loading indicator in the results list
-    // resultsList.innerHTML = "<li>Loading bookmarks...</li>";
+    searchResults = [];
     renderResults([]); // Keep results empty
     return;
   }
@@ -139,7 +141,6 @@ function handleSearchInput(event) {
   // Fuse is ready, proceed with search
   if (query) {
     searchResults = fuse.search(query);
-    selectedIndex = 0; // Reset selection on new search
     renderResults(searchResults);
   } else {
     // Clear results if query is empty
