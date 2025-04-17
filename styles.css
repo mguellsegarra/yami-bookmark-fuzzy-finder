@@ -165,22 +165,21 @@ body {
 }
 
 #bookmark-fuzzy-finder-results li .title {
-  display: inline-flex !important;
-  flex-shrink: 0 !important;
+  display: inline-block !important;
+  flex: 1 !important;
+  min-width: 0 !important;
   white-space: nowrap !important;
   color: var(--bff-text-color) !important;
   font-weight: normal !important;
   text-decoration: none !important;
   text-transform: none !important;
   font-size: 1em !important;
-  align-items: center !important;
-  height: 100% !important;
   margin: auto 0 !important;
   line-height: 1.4 !important;
   vertical-align: middle !important;
-  max-width: 200px !important;
   overflow: hidden !important;
   text-overflow: ellipsis !important;
+  max-width: 50% !important;
 }
 
 #bookmark-fuzzy-finder-results li .url {
@@ -197,4 +196,10 @@ body {
   font-weight: normal !important;
   line-height: 1.4 !important;
   vertical-align: middle !important;
+  max-width: 50% !important;
+}
+
+/* When there's no title, let URL take full remaining width */
+#bookmark-fuzzy-finder-results li:not(:has(.title)) .url {
+  max-width: 100% !important;
 }
