@@ -54,7 +54,7 @@
 You can customize the keyboard shortcut:
 
 1. Visit `chrome://extensions/shortcuts` in Chrome, or go to `Manage Extensions` - `Keyboard shortcuts`
-2. Find "Yami – Fuzzy Finder for Bookmarks" in the list
+2. Find "Yami - Bookmark Launcher" in the list
 3. Click the pencil icon next to the shortcut
 4. Press your desired key combination
 5. Click OK to save
