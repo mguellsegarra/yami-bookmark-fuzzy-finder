@@ -48,7 +48,7 @@
 3. Use arrow keys to navigate results
 4. Press Enter to open the selected bookmark
 
-### ⚙️ Customizing Shortcuts
+## ⚙️ Customizing Shortcuts
 
 You can customize the keyboard shortcut:
 

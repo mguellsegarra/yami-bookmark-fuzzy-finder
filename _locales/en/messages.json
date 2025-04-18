@@ -1,10 +1,10 @@
 {
   "extName": {
-    "message": "Yami – Fuzzy Finder for Bookmarks",
+    "message": "Yami – Bookmark Launcher",
     "description": "The name of the extension"
   },
   "extDescription": {
-    "message": "Quickly search and open your bookmarks using a fast, keyboard-driven interface with fuzzy matching.",
+    "message": "A fast and lightweight extension that helps you find and open bookmarks instantly — right from your keyboard.",
     "description": "The description of the extension"
   },
   "searchPlaceholder": {
@@ -12,7 +12,7 @@
     "description": "Placeholder text shown in the search input field"
   },
   "commandDescription": {
-    "message": "Open bookmark fuzzy finder",
+    "message": "Open bookmark launcher",
     "description": "Description of the keyboard shortcut command"
   }
 }
