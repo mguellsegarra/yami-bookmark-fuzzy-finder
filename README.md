@@ -37,7 +37,7 @@
 1. Install from the [Chrome Web Store](https://chrome.google.com/webstore/detail/yami-bookmark-fuzzy-finder)
 2. Or install manually:
    - Clone this repository
-   - Open Chrome or your Chromium-based browser and navigate to `chrome://extensions/`
+   - Open Chrome or your Chromium-based browser and navigate to `chrome://extensions/` or go to `Manage Extensions`
    - Enable "Developer mode" in the top right
    - Click "Load unpacked" and select the extension directory
 
@@ -52,7 +52,7 @@
 
 You can customize the keyboard shortcut:
 
-1. Visit `chrome://extensions/shortcuts` in Chrome
+1. Visit `chrome://extensions/shortcuts` in Chrome, or go to `Manage Extensions` - `Keyboard shortcuts`
 2. Find "Yami – Fuzzy Finder for Bookmarks" in the list
 3. Click the pencil icon next to the shortcut
 4. Press your desired key combination
@@ -82,6 +82,10 @@ To contribute to this project:
 2. Make your changes
 3. Test the extension locally using Chrome's developer mode
 4. Submit a pull request
+
+## 🛠️ Built with
+
+- [Fuse.js](https://github.com/krisk/fuse): From @krisk. Lightning-fast, lightweight fuzzy-search library for JavaScript, powering Yami's bookmark search.
 
 ## 🤝 Contributing
 
