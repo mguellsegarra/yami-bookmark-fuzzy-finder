@@ -1,10 +1,10 @@
 {
   "extName": {
-    "message": "Yami – Tìm kiếm fuzzy cho dấu trang",
+    "message": "Yami – Trình khởi chạy dấu trang",
     "description": "The name of the extension"
   },
   "extDescription": {
-    "message": "Tìm kiếm và mở dấu trang của bạn nhanh chóng với giao diện nhanh điều khiển bằng bàn phím với fuzzy matching.",
+    "message": "Một tiện ích mở rộng nhanh và nhẹ giúp bạn tìm và mở dấu trang ngay lập tức — trực tiếp từ bàn phím.",
     "description": "The description of the extension"
   },
   "searchPlaceholder": {
@@ -12,7 +12,7 @@
     "description": "Placeholder text shown in the search input field"
   },
   "commandDescription": {
-    "message": "Mở tìm kiếm fuzzy dấu trang",
+    "message": "Mở trình khởi chạy dấu trang",
     "description": "Description of the keyboard shortcut command"
   }
 }

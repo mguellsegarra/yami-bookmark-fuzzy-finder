@@ -1,10 +1,10 @@
 {
   "extName": {
-    "message": "يامي - باحث Fuzzy للإشارات المرجعية",
+    "message": "Yami – مشغّل الإشارات المرجعية",
     "description": "The name of the extension"
   },
   "extDescription": {
-    "message": "ابحث وافتح إشاراتك المرجعية بسرعة باستخدام واجهة سريعة تعمل بلوحة المفاتيح مع fuzzy matching.",
+    "message": "إضافة سريعة وخفيفة الوزن تساعدك في العثور على الإشارات المرجعية وفتحها فورًا — مباشرة من لوحة المفاتيح.",
     "description": "The description of the extension"
   },
   "searchPlaceholder": {
@@ -12,7 +12,7 @@
     "description": "Placeholder text shown in the search input field"
   },
   "commandDescription": {
-    "message": "فتح باحث Fuzzy للإشارات المرجعية",
+    "message": "فتح مشغّل الإشارات المرجعية",
     "description": "Description of the keyboard shortcut command"
   }
 }

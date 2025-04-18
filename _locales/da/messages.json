@@ -1,10 +1,10 @@
 {
   "extName": {
-    "message": "Yami – Fuzzy bogmærkesøgning",
+    "message": "Yami – Bogmærkestarter",
     "description": "The name of the extension"
   },
   "extDescription": {
-    "message": "Søg og åbn hurtigt dine bogmærker med en hurtig, tastaturdrevet grænseflade med fuzzy matching.",
+    "message": "En hurtig og let udvidelse, der hjælper dig med at finde og åbne bogmærker med det samme – direkte fra tastaturet.",
     "description": "The description of the extension"
   },
   "searchPlaceholder": {
@@ -12,7 +12,7 @@
     "description": "Placeholder text shown in the search input field"
   },
   "commandDescription": {
-    "message": "Åbn fuzzy bogmærkesøgning",
+    "message": "Åbn bogmærkestarter",
     "description": "Description of the keyboard shortcut command"
   }
 }

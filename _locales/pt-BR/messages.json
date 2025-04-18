@@ -1,10 +1,10 @@
 {
   "extName": {
-    "message": "Yami – Busca fuzzy de favoritos",
+    "message": "Yami – Launcher de favoritos",
     "description": "The name of the extension"
   },
   "extDescription": {
-    "message": "Pesquise e abra seus favoritos rapidamente usando uma interface rápida controlada por teclado com fuzzy matching.",
+    "message": "Uma extensão rápida e leve que ajuda você a encontrar e abrir favoritos instantaneamente — direto do seu teclado.",
     "description": "The description of the extension"
   },
   "searchPlaceholder": {
@@ -12,7 +12,7 @@
     "description": "Placeholder text shown in the search input field"
   },
   "commandDescription": {
-    "message": "Abrir busca fuzzy de favoritos",
+    "message": "Abrir launcher de favoritos",
     "description": "Description of the keyboard shortcut command"
   }
 }

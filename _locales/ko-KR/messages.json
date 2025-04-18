@@ -1,10 +1,10 @@
 {
   "extName": {
-    "message": "Yami – 북마크 Fuzzy 검색",
+    "message": "Yami – 북마크 런처",
     "description": "The name of the extension"
   },
   "extDescription": {
-    "message": "빠른 키보드 기반 인터페이스와 fuzzy matching으로 북마크를 빠르게 검색하고 열 수 있습니다.",
+    "message": "빠르고 가벼운 확장 프로그램으로, 키보드에서 바로 북마크를 즉시 찾고 열 수 있습니다.",
     "description": "The description of the extension"
   },
   "searchPlaceholder": {
@@ -12,7 +12,7 @@
     "description": "Placeholder text shown in the search input field"
   },
   "commandDescription": {
-    "message": "북마크 Fuzzy 검색 열기",
+    "message": "북마크 런처 열기",
     "description": "Description of the keyboard shortcut command"
   }
 }

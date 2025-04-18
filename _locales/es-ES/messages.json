@@ -1,10 +1,10 @@
 {
   "extName": {
-    "message": "Yami – Buscador fuzzy de marcadores",
+    "message": "Yami – Lanzador de marcadores",
     "description": "The name of the extension"
   },
   "extDescription": {
-    "message": "Busca y abre tus marcadores rápidamente usando una interfaz rápida controlada por teclado con fuzzy matching.",
+    "message": "Una extensión rápida y ligera que te ayuda a encontrar y abrir marcadores al instante, directamente desde tu teclado.",
     "description": "The description of the extension"
   },
   "searchPlaceholder": {
@@ -12,7 +12,7 @@
     "description": "Placeholder text shown in the search input field"
   },
   "commandDescription": {
-    "message": "Abrir buscador fuzzy de marcadores",
+    "message": "Abrir lanzador de marcadores",
     "description": "Description of the keyboard shortcut command"
   }
 }

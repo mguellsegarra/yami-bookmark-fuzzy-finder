@@ -1,10 +1,10 @@
 {
   "extName": {
-    "message": "Yami – Cerca fuzzy d'adreces d'interès",
+    "message": "Yami – Llançador d'adreces d'interès",
     "description": "The name of the extension"
   },
   "extDescription": {
-    "message": "Cerca i obre les teves adreces d'interès ràpidament amb una interfície ràpida controlada per teclat amb fuzzy matching.",
+    "message": "Una extensió ràpida i lleugera que t'ajuda a trobar i obrir adreces d'interès a l'instant — directament des del teclat.",
     "description": "The description of the extension"
   },
   "searchPlaceholder": {
@@ -12,7 +12,7 @@
     "description": "Placeholder text shown in the search input field"
   },
   "commandDescription": {
-    "message": "Obre la cerca fuzzy d'adreces d'interès",
+    "message": "Obre el llançador d'adreces d'interès",
     "description": "Description of the keyboard shortcut command"
   }
 }

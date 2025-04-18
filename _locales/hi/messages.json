@@ -1,10 +1,10 @@
 {
   "extName": {
-    "message": "Yami – बुकमार्क fuzzy खोज",
+    "message": "Yami – बुकमार्क लॉन्चर",
     "description": "The name of the extension"
   },
   "extDescription": {
-    "message": "तेज़ कीबोर्ड-संचालित इंटरफ़ेस और fuzzy matching के साथ अपने बुकमार्क तेज़ी से खोजें और खोलें।",
+    "message": "एक तेज़ और हल्का एक्सटेंशन जो आपको अपने कीबोर्ड से सीधे बुकमार्क खोजने और खोलने में मदद करता है।",
     "description": "The description of the extension"
   },
   "searchPlaceholder": {
@@ -12,7 +12,7 @@
     "description": "Placeholder text shown in the search input field"
   },
   "commandDescription": {
-    "message": "बुकमार्क fuzzy खोज खोलें",
+    "message": "बुकमार्क लॉन्चर खोलें",
     "description": "Description of the keyboard shortcut command"
   }
 }

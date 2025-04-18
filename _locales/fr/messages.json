@@ -1,18 +1,18 @@
 {
   "extName": {
-    "message": "Yami – Recherche floue de favoris",
+    "message": "Yami – Lanceur de favoris",
     "description": "The name of the extension"
   },
   "extDescription": {
-    "message": "Recherchez et ouvrez rapidement vos favoris à l'aide d'une interface rapide pilotée au clavier avec fuzzy matching.",
+    "message": "Une extension rapide et légère qui vous aide à trouver et ouvrir vos favoris instantanément, directement depuis votre clavier.",
     "description": "The description of the extension"
   },
   "searchPlaceholder": {
-    "message": "Rechercher dans les favoris...",
+    "message": "Rechercher des favoris...",
     "description": "Placeholder text shown in the search input field"
   },
   "commandDescription": {
-    "message": "Ouvrir la recherche floue de favoris",
+    "message": "Ouvrir le lanceur de favoris",
     "description": "Description of the keyboard shortcut command"
   }
 }

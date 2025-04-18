@@ -1,10 +1,10 @@
 {
   "extName": {
-    "message": "Yami – Yer imleri için fuzzy arama",
+    "message": "Yami – Yer imi başlatıcı",
     "description": "The name of the extension"
   },
   "extDescription": {
-    "message": "Yer imlerinizi hızlı bir klavye odaklı arayüz ve fuzzy matching ile hızlıca arayın ve açın.",
+    "message": "Hızlı ve hafif bir uzantı; yer imlerinizi anında bulmanıza ve açmanıza yardımcı olur — doğrudan klavyenizden.",
     "description": "The description of the extension"
   },
   "searchPlaceholder": {
@@ -12,7 +12,7 @@
     "description": "Placeholder text shown in the search input field"
   },
   "commandDescription": {
-    "message": "Yer imleri fuzzy aramayı aç",
+    "message": "Yer imi başlatıcıyı aç",
     "description": "Description of the keyboard shortcut command"
   }
 }

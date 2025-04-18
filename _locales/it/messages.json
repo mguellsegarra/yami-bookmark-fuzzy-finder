@@ -1,18 +1,18 @@
 {
   "extName": {
-    "message": "Yami – Ricerca fuzzy dei preferiti",
+    "message": "Yami – Launcher dei segnalibri",
     "description": "The name of the extension"
   },
   "extDescription": {
-    "message": "Cerca e apri rapidamente i tuoi preferiti utilizzando un'interfaccia veloce guidata da tastiera con fuzzy matching.",
+    "message": "Un'estensione veloce e leggera che ti aiuta a trovare e aprire i segnalibri all'istante, direttamente dalla tastiera.",
     "description": "The description of the extension"
   },
   "searchPlaceholder": {
-    "message": "Cerca nei preferiti...",
+    "message": "Cerca nei segnalibri...",
     "description": "Placeholder text shown in the search input field"
   },
   "commandDescription": {
-    "message": "Apri ricerca fuzzy dei preferiti",
+    "message": "Apri launcher dei segnalibri",
     "description": "Description of the keyboard shortcut command"
   }
 }

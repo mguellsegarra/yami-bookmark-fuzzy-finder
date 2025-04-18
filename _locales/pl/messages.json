@@ -1,10 +1,10 @@
 {
   "extName": {
-    "message": "Yami – fuzzy wyszukiwanie zakładek",
+    "message": "Yami – Uruchamiacz zakładek",
     "description": "The name of the extension"
   },
   "extDescription": {
-    "message": "Szybko wyszukuj i otwieraj swoje zakładki za pomocą szybkiego interfejsu sterowanego klawiaturą z fuzzy matching.",
+    "message": "Szybkie i lekkie rozszerzenie, które pomaga natychmiast znaleźć i otworzyć zakładki — prosto z klawiatury.",
     "description": "The description of the extension"
   },
   "searchPlaceholder": {
@@ -12,7 +12,7 @@
     "description": "Placeholder text shown in the search input field"
   },
   "commandDescription": {
-    "message": "Otwórz fuzzy wyszukiwanie zakładek",
+    "message": "Otwórz uruchamiacz zakładek",
     "description": "Description of the keyboard shortcut command"
   }
 }

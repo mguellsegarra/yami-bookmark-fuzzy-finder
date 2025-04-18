@@ -1,10 +1,10 @@
 {
   "extName": {
-    "message": "Yami – Fuzzy-Suche für Lesezeichen",
+    "message": "Yami – Lesezeichen-Launcher",
     "description": "The name of the extension"
   },
   "extDescription": {
-    "message": "Durchsuchen und öffnen Sie Ihre Lesezeichen schnell mit einer schnellen, tastaturgesteuerten Oberfläche mit fuzzy matching.",
+    "message": "Eine schnelle und schlanke Erweiterung, mit der Sie Lesezeichen sofort finden und öffnen können – direkt über Ihre Tastatur.",
     "description": "The description of the extension"
   },
   "searchPlaceholder": {
@@ -12,7 +12,7 @@
     "description": "Placeholder text shown in the search input field"
   },
   "commandDescription": {
-    "message": "Lesezeichen-Fuzzysuche öffnen",
+    "message": "Lesezeichen-Launcher öffnen",
     "description": "Description of the keyboard shortcut command"
   }
 }

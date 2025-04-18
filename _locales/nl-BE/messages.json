@@ -1,10 +1,10 @@
 {
   "extName": {
-    "message": "Yami – Fuzzy zoeken voor bladwijzers",
+    "message": "Yami – Bladwijzerlauncher",
     "description": "The name of the extension"
   },
   "extDescription": {
-    "message": "Zoek en open snel je bladwijzers met een snelle, toetsenbordgestuurde interface met fuzzy matching.",
+    "message": "Een snelle en lichte extensie die je helpt om bladwijzers direct te vinden en te openen – rechtstreeks vanaf je toetsenbord.",
     "description": "The description of the extension"
   },
   "searchPlaceholder": {
@@ -12,7 +12,7 @@
     "description": "Placeholder text shown in the search input field"
   },
   "commandDescription": {
-    "message": "Open fuzzy zoeken voor bladwijzers",
+    "message": "Bladwijzerlauncher openen",
     "description": "Description of the keyboard shortcut command"
   }
 }

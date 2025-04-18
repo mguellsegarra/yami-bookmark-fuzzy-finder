@@ -1,10 +1,10 @@
 {
   "extName": {
-    "message": "Yami – Laster-marken fuzzy bilaketa",
+    "message": "Yami – Laster-marken abiarazlea",
     "description": "The name of the extension"
   },
   "extDescription": {
-    "message": "Bilatu eta ireki zure laster-markak azkar teklatuan oinarritutako interfaze azkar batekin fuzzy matching erabiliz.",
+    "message": "Azkar eta arin laguntzen dizun hedapena, zure laster-markak berehala aurkitu eta irekitzeko — zuzenean teklatutik.",
     "description": "The description of the extension"
   },
   "searchPlaceholder": {
@@ -12,7 +12,7 @@
     "description": "Placeholder text shown in the search input field"
   },
   "commandDescription": {
-    "message": "Ireki laster-marken fuzzy bilaketa",
+    "message": "Ireki laster-marken abiarazlea",
     "description": "Description of the keyboard shortcut command"
   }
 }

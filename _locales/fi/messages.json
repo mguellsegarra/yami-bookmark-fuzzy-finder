@@ -1,10 +1,10 @@
 {
   "extName": {
-    "message": "Yami – Sumea kirjanmerkkihaku",
+    "message": "Yami – Kirjanmerkkikäynnistin",
     "description": "The name of the extension"
   },
   "extDescription": {
-    "message": "Etsi ja avaa kirjanmerkkejä nopeasti näppäimistöpohjaisella käyttöliittymällä, jossa on sumea haku.",
+    "message": "Nopea ja kevyt laajennus, jonka avulla löydät ja avaat kirjanmerkit välittömästi – suoraan näppäimistöltäsi.",
     "description": "The description of the extension"
   },
   "searchPlaceholder": {
@@ -12,7 +12,7 @@
     "description": "Placeholder text shown in the search input field"
   },
   "commandDescription": {
-    "message": "Avaa sumea kirjanmerkkihaku",
+    "message": "Avaa kirjanmerkkikäynnistin",
     "description": "Description of the keyboard shortcut command"
   }
 }

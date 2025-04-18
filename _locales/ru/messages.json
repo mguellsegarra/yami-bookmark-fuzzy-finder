@@ -1,0 +1,18 @@
+{
+  "extName": {
+    "message": "Yami – Лаунчер закладок",
+    "description": "The name of the extension"
+  },
+  "extDescription": {
+    "message": "Быстрое и легкое расширение, которое помогает мгновенно находить и открывать закладки прямо с клавиатуры.",
+    "description": "The description of the extension"
+  },
+  "searchPlaceholder": {
+    "message": "Поиск по закладкам...",
+    "description": "Placeholder text shown in the search input field"
+  },
+  "commandDescription": {
+    "message": "Открыть лаунчер закладок",
+    "description": "Description of the keyboard shortcut command"
+  }
+}
