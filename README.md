@@ -11,7 +11,8 @@
 <p align="center"><strong>Yami</strong> is an <strong>open-source</strong>, MIT-licensed <strong>browser extension</strong> for Chromium-based browsers like Chrome. It offers a fast, <strong>keyboard-first interface</strong> with <strong>fuzzy search</strong> support, letting you instantly find and open your bookmarks with just a few keystrokes.</p>
 
 <p align="center">
-  <img width="400" src="images/screenshot.png" alt="yami demo">
+  <img width="400" src="images/screenshot.png" alt="yami preview">
+  <img width="400" src="images/screenshot2.png" alt="yami shortcut">
 </p>
 
 <p align="center">
