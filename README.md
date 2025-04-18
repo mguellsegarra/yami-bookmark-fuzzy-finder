@@ -85,7 +85,7 @@ To contribute to this project:
 
 ## 🛠️ Built with
 
-- [Fuse.js](https://github.com/krisk/fuse): From @krisk. Lightning-fast, lightweight fuzzy-search library for JavaScript, powering Yami's bookmark search.
+- [Fuse.js](https://github.com/krisk/fuse): From [Kiro Risk - @krisk](https://github.com/krisk). Lightning-fast, lightweight fuzzy-search library for JavaScript, powering Yami's bookmark search.
 
 ## 🤝 Contributing
 
