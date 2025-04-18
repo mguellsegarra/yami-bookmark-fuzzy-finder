@@ -1,10 +1,10 @@
 {
   "extName": {
-    "message": "Yami – Pesquisa Fuzzy de Marcadores",
+    "message": "Yami – Pesquisa fuzzy de marcadores",
     "description": "The name of the extension"
   },
   "extDescription": {
-    "message": "Pesquise e abra marcadores rapidamente com uma interface estilo Raycast.",
+    "message": "Pesquise e abra os seus marcadores rapidamente usando uma interface rápida controlada por teclado com fuzzy matching.",
     "description": "The description of the extension"
   },
   "searchPlaceholder": {

@@ -1,10 +1,10 @@
 {
   "extName": {
-    "message": "Yami – Busca difusa de marcadores",
+    "message": "Yami – Busca fuzzy de marcadores",
     "description": "The name of the extension"
   },
   "extDescription": {
-    "message": "Busca e abre marcadores rapidamente cunha interface similar a Raycast.",
+    "message": "Busca e abre os teus marcadores rapidamente cunha interface rápida controlada por teclado con fuzzy matching.",
     "description": "The description of the extension"
   },
   "searchPlaceholder": {
@@ -12,7 +12,7 @@
     "description": "Placeholder text shown in the search input field"
   },
   "commandDescription": {
-    "message": "Abrir busca difusa de marcadores",
+    "message": "Abrir busca fuzzy de marcadores",
     "description": "Description of the keyboard shortcut command"
   }
 }

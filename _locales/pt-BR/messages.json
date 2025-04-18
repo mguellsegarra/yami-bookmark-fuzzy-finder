@@ -1,10 +1,10 @@
 {
   "extName": {
-    "message": "Yami – Busca Fuzzy de Favoritos",
+    "message": "Yami – Busca fuzzy de favoritos",
     "description": "The name of the extension"
   },
   "extDescription": {
-    "message": "Pesquise e abra favoritos rapidamente com uma interface estilo Raycast.",
+    "message": "Pesquise e abra seus favoritos rapidamente usando uma interface rápida controlada por teclado com fuzzy matching.",
     "description": "The description of the extension"
   },
   "searchPlaceholder": {

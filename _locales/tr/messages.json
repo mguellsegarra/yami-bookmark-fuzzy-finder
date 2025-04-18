@@ -1,1 +1,18 @@
-
+{
+  "extName": {
+    "message": "Yami – Yer imleri için fuzzy arama",
+    "description": "The name of the extension"
+  },
+  "extDescription": {
+    "message": "Yer imlerinizi hızlı bir klavye odaklı arayüz ve fuzzy matching ile hızlıca arayın ve açın.",
+    "description": "The description of the extension"
+  },
+  "searchPlaceholder": {
+    "message": "Yer imlerinde ara...",
+    "description": "Placeholder text shown in the search input field"
+  },
+  "commandDescription": {
+    "message": "Yer imleri fuzzy aramayı aç",
+    "description": "Description of the keyboard shortcut command"
+  }
+}

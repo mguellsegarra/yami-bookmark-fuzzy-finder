@@ -15,6 +15,7 @@ zip -r "$ZIP_NAME" \
     styles.css \
     fuse.min.js \
     icons/ \
+    _locales/ \
     -x "*.DS_Store" \
     -x ".*" \
     -x "__MACOSX/*" \

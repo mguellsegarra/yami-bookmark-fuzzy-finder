@@ -1,10 +1,10 @@
 {
   "extName": {
-    "message": "Yami – Pencarian Fuzzy untuk Bookmark",
+    "message": "Yami – Pencarian fuzzy untuk bookmark",
     "description": "The name of the extension"
   },
   "extDescription": {
-    "message": "Cari dan buka bookmark dengan cepat menggunakan antarmuka mirip Raycast.",
+    "message": "Cari dan buka bookmark Anda dengan cepat menggunakan antarmuka cepat berbasis keyboard dengan fuzzy matching.",
     "description": "The description of the extension"
   },
   "searchPlaceholder": {

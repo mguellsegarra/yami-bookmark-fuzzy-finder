@@ -21,8 +21,8 @@
 ## ✨ Features
 
 - 🔍 Fast fuzzy search through all your bookmarks
-- ⌨️ Keyboard-first interface inspired by [Raycast](https://www.raycast.com/)
-- ⚡ Instant results as you type
+- ⌨️ Keyboard-first interface inspired by productivity tools like [Raycast](https://www.raycast.com/), [Alfred](https://www.alfredapp.com/), [Launchy](https://www.launchy.net/), [Ulauncher](https://ulauncher.io/), Spotlight.
+- - ⚡ Instant results as you type
 - 🎯 Quick access with keyboard shortcut (⌘⇧K on Mac, Ctrl+Shift+K on Windows/Linux)
 - 🖼️ Favicon support for visual recognition
 
