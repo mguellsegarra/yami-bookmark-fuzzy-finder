@@ -6,25 +6,31 @@
 <a rel="noreferrer noopener" href="https://chrome.google.com/webstore/detail/yami-bookmark-fuzzy-finder"><img alt="Chrome Web Store" src="https://img.shields.io/badge/Google%20Chrome-4285F4?logo=GoogleChrome&logoColor=white"></a>
 </p>
 
-<h2 align="center">Yami – Fuzzy Finder for Bookmarks</h2>
+<h2 align="center">Yami – Bookmark Launcher</h2>
 
 <p align="center"><strong>Yami</strong> is an <strong>open-source</strong>, MIT-licensed <strong>browser extension</strong> for Chromium-based browsers like Chrome. It offers a fast, <strong>keyboard-first interface</strong> with <strong>fuzzy search</strong> support, letting you instantly find and open your bookmarks with just a few keystrokes.</p>
 
 <p align="center">
-  <img width="400" src="images/demo.gif" alt="Yami Demo">
+  <img width="400" src="images/screenshot.png" alt="yami demo">
 </p>
 
 <p align="center">
 <kbd>Ctrl</kbd> + <kbd>⇧</kbd> + <kbd>K</kbd> on Windows/Linux<br /><kbd>⌘</kbd> + <kbd>⇧</kbd> + <kbd>K</kbd> on macOS</p>
-<p align="center"><em>The keyboard shortcut is fully customizable in Chrome extension shortcuts section</em></p>
+<p align="center"><em>The keyboard shortcut is fully customizable in Chrome extension keyboard shortcuts section</em></p>
 
 ## ✨ Features
 
 - 🔍 Fast fuzzy search through all your bookmarks
 - ⌨️ Keyboard-first interface inspired by productivity tools like [Raycast](https://www.raycast.com/), [Alfred](https://www.alfredapp.com/), [Launchy](https://www.launchy.net/), [Ulauncher](https://ulauncher.io/), Spotlight.
-- - ⚡ Instant results as you type
+- ⚡ Instant results as you type
 - 🎯 Quick access with keyboard shortcut (⌘⇧K on Mac, Ctrl+Shift+K on Windows/Linux)
 - 🖼️ Favicon support for visual recognition
+
+## Demo
+
+<p align="center">
+  <img width="400" src="images/demo.gif" alt="yami demo">
+</p>
 
 ## 🚀 Installation
 
