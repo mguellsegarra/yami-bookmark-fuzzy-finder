@@ -35,7 +35,7 @@
 
 ## 🚀 Installation
 
-1. Install from the [Chrome Web Store](https://chrome.google.com/webstore/detail/yami-bookmark-fuzzy-finder)
+1. Install from the [Chrome Web Store](https://chromewebstore.google.com/detail/yami-bookmark-launcher/jnalohicjcjdgkbahjgobeadljgmlpba)
 2. Or install manually:
    - Clone this repository
    - Open Chrome or your Chromium-based browser and navigate to `chrome://extensions/` or go to `Manage Extensions`
