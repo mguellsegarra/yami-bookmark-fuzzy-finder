@@ -26,7 +26,7 @@
 - 🎯 Quick access with keyboard shortcut (⌘⇧K on Mac, Ctrl+Shift+K on Windows/Linux)
 - 🖼️ Favicon support for visual recognition
 
-## Demo
+## 🪄 Demo
 
 <p align="center">
   <img width="400" src="images/demo.gif" alt="yami demo">
