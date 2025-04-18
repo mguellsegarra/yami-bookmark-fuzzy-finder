@@ -152,8 +152,16 @@ function handleKeyboardNavigation(event) {
   } else if (event.key === "Enter") {
     event.preventDefault();
     if (selectedIndex >= 0 && selectedIndex < searchResults.length) {
-      const selectedBookmark = searchResults[selectedIndex].item;
-      openBookmark(selectedBookmark.url);
+      // Find the original bookmark with the full URL
+      const processedUrl = searchResults[selectedIndex].item.url;
+      const originalBookmark = bookmarks.find(
+        (b) =>
+          b.url
+            .replace(/^https?:\/\//, "")
+            .replace(/^www\./, "")
+            .replace(/\/$/, "") === processedUrl
+      );
+      openBookmark(originalBookmark.url);
       hideOmnibar();
     }
   }
@@ -213,9 +221,19 @@ function renderResults(resultsToRender) {
       li.classList.add("selected");
     }
 
+    // Find the original bookmark with the full URL
+    const processedUrl = result.item.url;
+    const originalBookmark = bookmarks.find(
+      (b) =>
+        b.url
+          .replace(/^https?:\/\//, "")
+          .replace(/^www\./, "")
+          .replace(/\/$/, "") === processedUrl
+    );
+
     const favicon = document.createElement("img");
     favicon.className = "favicon";
-    favicon.src = getFaviconUrl(result.item.url);
+    favicon.src = getFaviconUrl(originalBookmark.url);
     favicon.width = 16;
     favicon.height = 16;
     favicon.alt = "";
@@ -226,17 +244,14 @@ function renderResults(resultsToRender) {
 
     const urlSpan = document.createElement("span");
     urlSpan.className = "url";
-    urlSpan.textContent = result.item.url
-      .replace(/^https?:\/\//, "") // Remove http:// or https://
-      .replace(/^www\./, "") // Remove www.
-      .replace(/\/$/, ""); // Remove trailing slash
+    urlSpan.textContent = result.item.url;
 
     li.appendChild(favicon);
     li.appendChild(titleSpan);
     li.appendChild(urlSpan);
 
     li.addEventListener("click", () => {
-      openBookmark(result.item.url);
+      openBookmark(originalBookmark.url);
       hideOmnibar();
     });
 
@@ -277,7 +292,17 @@ function initializeFuse(bookmarkData) {
     hideOmnibar();
     return;
   }
-  fuse = new Fuse(bookmarkData, options);
+
+  // Preprocess URLs before passing to Fuse
+  const processedBookmarks = bookmarkData.map((bookmark) => ({
+    ...bookmark,
+    url: bookmark.url
+      .replace(/^https?:\/\//, "") // Remove http:// or https://
+      .replace(/^www\./, "") // Remove www.
+      .replace(/\/$/, ""), // Remove trailing slash
+  }));
+
+  fuse = new Fuse(processedBookmarks, options);
 }
 
 function fetchBookmarks() {
