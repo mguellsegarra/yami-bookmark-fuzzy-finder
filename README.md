@@ -6,7 +6,7 @@
 <a rel="noreferrer noopener" href="https://chrome.google.com/webstore/detail/yami-bookmark-fuzzy-finder"><img alt="Chrome Web Store" src="https://img.shields.io/badge/Google%20Chrome-4285F4?logo=GoogleChrome&logoColor=white"></a>
 </p>
 
-<h2 align="center">Yami — Bookmark Launcher</h2>
+<h2 align="center">Yami - Bookmark Launcher</h2>
 
 <p align="center"><strong>Yami</strong> is an <strong>open-source</strong>, MIT-licensed <strong>browser extension</strong> for Chromium-based browsers like Chrome. It offers a fast, <strong>keyboard-first interface</strong> with <strong>fuzzy search</strong> support, letting you instantly find and open your bookmarks with just a few keystrokes.</p>
 

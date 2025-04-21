@@ -1,10 +1,10 @@
 {
   "extName": {
-    "message": "Yami — Bookmark Launcher",
+    "message": "Yami - Bookmark Launcher",
     "description": "The name of the extension"
   },
   "extDescription": {
-    "message": "A fast and lightweight extension that helps you find and open bookmarks instantly — right from your keyboard.",
+    "message": "A fast and lightweight extension that helps you find and open bookmarks instantly - right from your keyboard.",
     "description": "The description of the extension"
   },
   "searchPlaceholder": {
