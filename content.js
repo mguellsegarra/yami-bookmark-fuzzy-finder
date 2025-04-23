@@ -75,13 +75,16 @@ function showOmnibar() {
 
 function hideOmnibar() {
   if (omnibarContainer) {
-    omnibarContainer.classList.remove("visible");
+    omnibarContainer.remove();
     document.removeEventListener("keydown", handleGlobalKeys);
     document.removeEventListener("click", handleClickOutside);
     document.removeEventListener("visibilitychange", handleVisibilityChange);
     document.removeEventListener("mousemove", handleFirstMouseMove);
     window.removeEventListener("blur", handleWindowBlur);
     isOmnibarVisible = false;
+    omnibarContainer = null;
+    searchInput = null;
+    resultsList = null;
   }
 }
 
