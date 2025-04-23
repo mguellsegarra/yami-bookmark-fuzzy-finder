@@ -49,7 +49,13 @@ chrome.commands.onCommand.addListener((command, tab) => {
 // Listen for messages from content script (e.g., to open a bookmark)
 chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
   if (request.action === "openBookmark") {
-    chrome.tabs.create({ url: request.url });
+    if (request.openInNewWindow) {
+      chrome.windows.create({ url: request.url });
+    } else if (request.openInNewTab) {
+      chrome.tabs.create({ url: request.url });
+    } else if (request.openInCurrentTab) {
+      chrome.tabs.update(sender.tab.id, { url: request.url });
+    }
     sendResponse({ status: "Bookmark opened" });
     return true; // Keep the message channel open for asynchronous response
   }

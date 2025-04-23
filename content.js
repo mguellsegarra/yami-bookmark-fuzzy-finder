@@ -164,7 +164,15 @@ function handleKeyboardNavigation(event) {
             .replace(/^www\./, "")
             .replace(/\/$/, "") === processedUrl
       );
-      openBookmark(originalBookmark.url);
+
+      const openInNewWindow = event.shiftKey;
+      const openInNewTab = event.metaKey || event.ctrlKey; // metaKey for Mac, ctrlKey for Windows/Linux
+
+      openBookmark(originalBookmark.url, {
+        openInNewWindow,
+        openInNewTab,
+        openInCurrentTab: !openInNewWindow && !openInNewTab,
+      });
       hideOmnibar();
     }
   }
@@ -253,8 +261,15 @@ function renderResults(resultsToRender) {
     li.appendChild(titleSpan);
     li.appendChild(urlSpan);
 
-    li.addEventListener("click", () => {
-      openBookmark(originalBookmark.url);
+    li.addEventListener("click", (event) => {
+      const openInNewWindow = event.shiftKey;
+      const openInNewTab = event.metaKey || event.ctrlKey; // metaKey for Mac, ctrlKey for Windows/Linux
+
+      openBookmark(originalBookmark.url, {
+        openInNewWindow,
+        openInNewTab,
+        openInCurrentTab: !openInNewWindow && !openInNewTab,
+      });
       hideOmnibar();
     });
 
@@ -324,6 +339,12 @@ function fetchBookmarks() {
 }
 
 // --- Actions ---
-function openBookmark(url) {
-  chrome.runtime.sendMessage({ action: "openBookmark", url: url });
+function openBookmark(url, options = { openInCurrentTab: true }) {
+  chrome.runtime.sendMessage({
+    action: "openBookmark",
+    url: url,
+    openInCurrentTab: options.openInCurrentTab,
+    openInNewWindow: options.openInNewWindow,
+    openInNewTab: options.openInNewTab,
+  });
 }
