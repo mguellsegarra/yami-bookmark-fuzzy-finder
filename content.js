@@ -56,15 +56,9 @@ function showOmnibar() {
     justCreated = true;
   }
 
-  // Ensure the container is displayed before adding visible class
-  omnibarContainer.style.display = "block";
-  // Use requestAnimationFrame to ensure the display change has taken effect
-  requestAnimationFrame(() => {
-    omnibarContainer.classList.add("visible");
-  });
-
   hasMouseMovedSinceRender = false;
   lastMousePosition = null;
+  omnibarContainer.classList.add("visible");
   searchInput.value = "";
   renderResults([]);
   searchInput.focus();
@@ -88,13 +82,6 @@ function hideOmnibar() {
     document.removeEventListener("mousemove", handleFirstMouseMove);
     window.removeEventListener("blur", handleWindowBlur);
     isOmnibarVisible = false;
-
-    // Hide the container after the transition
-    setTimeout(() => {
-      if (!isOmnibarVisible && omnibarContainer) {
-        omnibarContainer.style.display = "none";
-      }
-    }, 250); // Slightly longer than the CSS transition
   }
 }
 
