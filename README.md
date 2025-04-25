@@ -59,6 +59,20 @@ You can customize the keyboard shortcut:
 4. Press your desired key combination
 5. Click OK to save
 
+## 🔒 Limitations (by design – imposed by Chrome)
+
+Due to browser security restrictions, Yami (like other extensions such as Vimium C) cannot be activated or interact with certain special pages, including:
+
+- The Chrome Web Store
+- `chrome://` pages (like `chrome://settings`, `chrome://extensions`, etc.)
+- Some `New Tab` pages (depending on the browser)
+
+This is a limitation imposed by Chrome itself — not something Yami can override. These pages are considered internal or sensitive, so extensions are blocked from running scripts or being triggered via shortcuts on them.
+
+So if you press the shortcut on one of these pages, nothing will happen — but as soon as you’re back on a regular site or tab, Yami works as expected.
+
+**💡 TIP**: set a cool start page for new tabs (like https://web.tabliss.io/) and you'll avoid this in this scenario ;)
+
 ## 🔐 Permissions
 
 This extension requires the following permissions:
